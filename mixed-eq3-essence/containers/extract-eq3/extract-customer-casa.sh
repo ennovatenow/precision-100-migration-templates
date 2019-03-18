@@ -22,3 +22,6 @@ sleep 2
 echo "Extracting table SVPF"
 cp $CONTAINER_FOLDER/$CONTAINER/SVPF.dat $SQLLDR_INPUT
 sleep 2
+echo "Extracting table BGPF"
+cp $CONTAINER_FOLDER/$CONTAINER/BGPF.dat $SQLLDR_INPUT
+sleep 2
