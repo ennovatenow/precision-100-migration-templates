@@ -1,7 +1,8 @@
-10,GFPF.ctl,loader
-20,SCPF.ctl,loader
-30,C8PF.ctl,loader
-40,S5PF.ctl,loader
-50,C5PF.ctl,loader
-60,SX20LF.ctl,loader
-70,SVPF.ctl,loader
+10,GFPF.ctl,smartloader
+20,SCPF.ctl,smartloader
+30,C8PF.ctl,smartloader
+40,S5PF.ctl,smartloader
+50,C5PF.ctl,smartloader
+60,SX20LF.ctl,smartloader
+70,SVPF.ctl,smartloader
+80,BGPF.ctl,smartloader
