@@ -1,0 +1,5 @@
+10,extract-mapper.sh,sh
+20,map_codes,smartloader
+30,map-cif.sql,sql
+40,map-acc.sql,sql
+50,map-off-acc.sql,sql
