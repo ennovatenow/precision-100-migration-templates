@@ -1,6 +1,6 @@
 10,create-validation-tables.sql,sql
-20,o_party_common,length-validator
+20,o_party_common,length-validator,v_party_common
 30,validate-party-common.sql,sql
-40,o_party_person_details,length-validator
+40,o_party_person_details,length-validator,v_party_person_details
 50,v_o_party_common,spool
 60,v_o_party_person_details,spool
