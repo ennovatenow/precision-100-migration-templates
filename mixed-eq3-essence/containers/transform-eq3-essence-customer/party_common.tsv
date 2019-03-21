@@ -1,0 +1,90 @@
+Column_Name	DataType	MaxLength	Mapping Type	Mapped Value
+PartyId	VARCHAR	120	PASSTHRU	GFPF.GFCUS || GFPF.GFCLC
+PartyType	VARCHAR		PASSTHRU	CONVERT_CODES('CUST_TYPE',GFPF.GFCTP)
+PartySubType	VARCHAR		PASSTHRU	GFPF.GFCTP
+PartyCategory	VARCHAR			
+PartyName	VARCHAR	255	PASSTHRU	GFPF.GFCUN
+PartyEquivalentName	VARCHAR	255		
+ShortName	VARCHAR	60	PASSTHRU	GFPF.GFDAS
+EquivalentShortName	VARCHAR	60		
+Language	VARCHAR		CONSTANT	EN
+PartyAcquisitionDate	TIMESTAMP		PASSTHRU	GFPF.GFCOD
+RelationshipManagerID	VARCHAR	30	PASSTHRU	GFPF.GFACO
+PartyStatus	VARCHAR			
+IsMultiHost	VARCHAR	1		
+AlphaCode	VARCHAR			
+BranchCode	VARCHAR	8	PASSTHRU	GFPF.GFBRNM
+KYCStatus	VARCHAR			
+KYCExpiryDate	DATE	10	PASSTHRU	BGPF.BGC034
+KYCCautionaryDate	DATE			
+LastModifiedDate	DATE		PASSTHRU	GFPF.GFDLM
+CommonSequence	VARCHAR	20		
+PartyStatusID	VARCHAR			
+StatusType	VARCHAR			
+Country	VARCHAR			
+Region	VARCHAR			
+LocalityType	VARCHAR			
+CountryCode	VARCHAR	20		
+RegionCode	VARCHAR	50		
+AddressLine1	VARCHAR	256	PASSTHRU	SX20LF.SVNA1
+AddressLine2	VARCHAR	256	PASSTHRU	SX20LF.SVNA2
+AddressLine3	VARCHAR	256	PASSTHRU	SX20LF.SVNA3
+AddressLine4	VARCHAR	256	PASSTHRU	SX20LF.SVNA4
+AddressLine5	VARCHAR	256	PASSTHRU	SX20LF.SVNA5
+AddressLine6	VARCHAR	256		
+AddressLine7	VARCHAR	256		
+AddressLine8	VARCHAR	256		
+AddressLine9	VARCHAR	256		
+AddressLine10	VARCHAR	256		
+PostalCode	VARCHAR	20	PASSTHRU	SX20LF.SVPZIP
+City	VARCHAR	50		
+EntityType	VARCHAR			
+IsDefaultAddress	VARCHAR			
+AddressType	VARCHAR			
+AddressFromDate	DATE			
+AddressToDate	DATE			
+DUNsNumberOfLocation	VARCHAR	20		
+PrincipalContact	VARCHAR	50		
+StatusAtTheAddress	VARCHAR	50		
+PreferredStatementChannel	VARCHAR	50		
+PreferredLanguage	VARCHAR			
+PreferredReportingCurrency	VARCHAR			
+IsAgreetoContactForMarketing	VARCHAR			
+FeeWaiverIndicator	VARCHAR			
+IsBundlePricingEligibility	VARCHAR			
+IsWHTLiable	VARCHAR	1		
+TaxCountry	VARCHAR	20		
+TaxIdNumber	VARCHAR	50		
+IsTaxPayer	VARCHAR	1		
+IsRegistredForGST	VARCHAR	1		
+GSTRegistrationNumber	VARCHAR	50		
+TaxExcemptionId	VARCHAR	50		
+RelatedPartyID	VARCHAR	30		
+RelationshipType	VARCHAR	50		
+PercentageOfOwnership	DECIMAL			
+RelationshipFromDate	DATE			
+RelationshipToDate	DATE			
+Narrative	VARCHAR	256		
+ClosureDate	DATE			
+WatchListStatus	VARCHAR			
+StatusReasonCode	VARCHAR			
+StatusChangeDate	DATE			
+StatusStartDate	DATE			
+StatusEndDate	DATE			
+JudgementType	VARCHAR			
+JudgementExpiryDate	DATE			
+IsCustodial	VARCHAR			
+StatusChangeReason	VARCHAR			
+StatementProfileId	VARCHAR	20		
+DelinquencyStatus	VARCHAR	20		
+DelinquencyLoanStatus	VARCHAR	50		
+ChargeFundingAccount	VARCHAR	20		
+SignatureStatus	VARCHAR	50		
+SignatureTransactionReference	VARCHAR	30		
+PriorKYCStatus	VARCHAR	50		
+IsMobileBanking	VARCHAR	1		
+IsInternetBanking	VARCHAR	1		
+			__JOIN__	from map_cif map_cif
+			__JOIN__	inner join gfpf on leg_cust_id = gfpf.gfcus||gfpf.gfclc
+			__JOIN__	left join bgpf on gfpf.gfcus = bgpf.bgcus and nvl(gfpf.gfclc,' ') = nvl(bgpf.bgclc, ' ')
+			__JOIN__	left join sx20lf sx20lf on gfpf.gfcus = sx20lf.sxcus and nvl(gfpf.gfclc,' ') = nvl(sx20lf.sxclc, ' ')
