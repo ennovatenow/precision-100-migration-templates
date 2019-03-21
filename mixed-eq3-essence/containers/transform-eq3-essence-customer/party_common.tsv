@@ -1,31 +1,31 @@
 Column_Name	DataType	MaxLength	Mapping Type	Mapped Value
-PartyId	VARCHAR	120	PASSTHRU	GFPF.GFCUS || GFPF.GFCLC
+PartyId	VARCHAR	120	PASSTHRU	GFPF.GFCPNC
 PartyType	VARCHAR		PASSTHRU	CONVERT_CODES('CUST_TYPE',GFPF.GFCTP)
-PartySubType	VARCHAR		PASSTHRU	GFPF.GFCTP
-PartyCategory	VARCHAR			
+PartySubType	VARCHAR		PASSTHRU	CONVERT_CODES('CUST_SUB_TYPE', GFPF.GFCTP)
+PartyCategory	VARCHAR		CONSTANT	Full
 PartyName	VARCHAR	255	PASSTHRU	GFPF.GFCUN
 PartyEquivalentName	VARCHAR	255		
 ShortName	VARCHAR	60	PASSTHRU	GFPF.GFDAS
 EquivalentShortName	VARCHAR	60		
-Language	VARCHAR		CONSTANT	EN
-PartyAcquisitionDate	TIMESTAMP		PASSTHRU	GFPF.GFCOD
+Language	VARCHAR			
+PartyAcquisitionDate	TIMESTAMP		PASSTHRU	NVL(EQ3_TO_ORACLE_DATE(GFPF.GFCOD),CONVERT_CODES('PARAM','BUSINESS_DATE'))
 RelationshipManagerID	VARCHAR	30	PASSTHRU	GFPF.GFACO
 PartyStatus	VARCHAR			
-IsMultiHost	VARCHAR	1		
+IsMultiHost	VARCHAR	1	CONSTANT	N
 AlphaCode	VARCHAR			
 BranchCode	VARCHAR	8	PASSTHRU	GFPF.GFBRNM
 KYCStatus	VARCHAR			
-KYCExpiryDate	DATE	10	PASSTHRU	BGPF.BGC034
+KYCExpiryDate	DATE	10		
 KYCCautionaryDate	DATE			
-LastModifiedDate	DATE		PASSTHRU	GFPF.GFDLM
+LastModifiedDate	DATE			
 CommonSequence	VARCHAR	20		
 PartyStatusID	VARCHAR			
 StatusType	VARCHAR			
 Country	VARCHAR			
 Region	VARCHAR			
 LocalityType	VARCHAR			
-CountryCode	VARCHAR	20		
-RegionCode	VARCHAR	50		
+CountryCode	VARCHAR	20	PASSTHRU	GFPF.GFCNAP
+RegionCode	VARCHAR	50	CONSTANT	BF-BankFusion
 AddressLine1	VARCHAR	256	PASSTHRU	SX20LF.SVNA1
 AddressLine2	VARCHAR	256	PASSTHRU	SX20LF.SVNA2
 AddressLine3	VARCHAR	256	PASSTHRU	SX20LF.SVNA3
@@ -41,22 +41,22 @@ City	VARCHAR	50
 EntityType	VARCHAR			
 IsDefaultAddress	VARCHAR			
 AddressType	VARCHAR			
-AddressFromDate	DATE			
+AddressFromDate	DATE		PASSTHRU	CONVERT_CODES('PARAM','BUSINESS_DATE')
 AddressToDate	DATE			
 DUNsNumberOfLocation	VARCHAR	20		
 PrincipalContact	VARCHAR	50		
-StatusAtTheAddress	VARCHAR	50		
+StatusAtTheAddress	VARCHAR	50	CONSTANT	LODGER
 PreferredStatementChannel	VARCHAR	50		
 PreferredLanguage	VARCHAR			
 PreferredReportingCurrency	VARCHAR			
-IsAgreetoContactForMarketing	VARCHAR			
-FeeWaiverIndicator	VARCHAR			
-IsBundlePricingEligibility	VARCHAR			
-IsWHTLiable	VARCHAR	1		
+IsAgreetoContactForMarketing	VARCHAR		CONSTANT	N
+FeeWaiverIndicator	VARCHAR		CONSTANT	N
+IsBundlePricingEligibility	VARCHAR		CONSTANT	N
+IsWHTLiable	VARCHAR	1	CONSTANT	N
 TaxCountry	VARCHAR	20		
 TaxIdNumber	VARCHAR	50		
 IsTaxPayer	VARCHAR	1		
-IsRegistredForGST	VARCHAR	1		
+IsRegistredForGST	VARCHAR	1	CONSTANT	N
 GSTRegistrationNumber	VARCHAR	50		
 TaxExcemptionId	VARCHAR	50		
 RelatedPartyID	VARCHAR	30		
