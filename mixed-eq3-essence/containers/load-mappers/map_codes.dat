@@ -1,3 +1,5 @@
 CODE_TYPE,LEG_CODE,LEG_CODE_DESC,DEST_CODE,DEST_CODE_DESC,IS_DEFAULT
 CUST_TYPE,EA,Individual,1062,Individual,N
 CUST_TYPE,EY,Individual,1062,Individual,Y
+CONSTANT,BUSINESS_DATE,Business date of the Migration data,2019-03-21,Business Date of the Migration Data,Y
+CONSTANT,PREFERRED_CCY,Default currency code,INR,Default Currency Code,Y
