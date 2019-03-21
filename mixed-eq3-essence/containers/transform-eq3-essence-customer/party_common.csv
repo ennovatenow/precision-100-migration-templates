@@ -1,90 +1,90 @@
-Column_Name~DataType~Input_Method~MaxLength~Description~Default~Mapping Type~Mapping Value
-PartyId~VARCHAR~Input~120~Party Id~~PASSTHRU~GFPF.GFCUS || GFPF.GFCLC
-PartyType~VARCHAR~Input~~Party type enterprise(1063) or personal(1062)~~PASSTHRU~CONVERT_CODES('CUST_TYPE',GFPF.GFCTP)
-PartySubType~VARCHAR~Input~~"Party Subtype -Student,staff etc from Generic Code"~~PASSTHRU~GFPF.GFCTP
-PartyCategory~VARCHAR~Input~~"Party Category - Full, walkin, agent etc."~Full~CONSTANT~Full
-PartyName~VARCHAR~Input~255~Name of the party~~~GFPF.GFCUN
-PartyEquivalentName~VARCHAR~Input~255~Party equivalent name~~~
-ShortName~VARCHAR~Input~60~Party short name~~~GFPF.GFDAS
-EquivalentShortName~VARCHAR~Input~60~Party equivalent short name~~~
-Language~VARCHAR~Default~~Language id~en~CONSTANT~en
-PartyAcquisitionDate~TIMESTAMP~Input~~"When the customer was created, if not provided date of migration is treated as customer auquisition date"~Context.MigrationDate~~GFPF.GFCOD
-RelationshipManagerID~VARCHAR~Input~30~The ID of the Relationship Manager responsible for this customer.~superit~PASSTHRU~GFPF.GFACO
-PartyStatus~VARCHAR~Default~~Bank party status~ACCEPTED~CONSTANT~ACCEPTED
-IsMultiHost~VARCHAR~Input~1~If party id is global across host systems~N~CONSTANT~N
-AlphaCode~VARCHAR~Input~~"Alpha code for quick seraches, not used for Internal customers, used only in case of Individual and Enterprise customers"~~~
-BranchCode~VARCHAR~Input~8~Party associated with branch (Sort code)~~PASSTHRU~GFPF.GFBRNM
-KYCStatus~VARCHAR~Default~~Party KYC status~001~CONSTANT~001
-KYCExpiryDate~DATE~Default~10~Party KYC expiry date.~1970-01-01~PASSTHRU~BGPF.BGC034
-KYCCautionaryDate~DATE~Default~~Date on which party KYC status marked as cautionary~1970-01-01~CONSTANT~1970-01-01
-LastModifiedDate~DATE~Default~~Last modified date~1970-01-01~PASSTHRU~GFPF.GFDLM
-CommonSequence~VARCHAR~Sequence~20~Surrogate Key~~~
-PartyStatusID~VARCHAR~Default~~PARTY status~001~CONSTANT~001
-StatusType~VARCHAR~Default~~Public Party Status or bank party Status~BANKSTATUS~CONSTANT~BANKSTATUS
-Country~VARCHAR~Default~~Country Code~BF~CONSTANT~BF
-Region~VARCHAR~Default~~Region Code~BF-BankFusion~CONSTANT~BF-BankFusion
-LocalityType~VARCHAR~Default~~"Party Locality types (local public, private, global)"~LOCALPRIVATE~CONSTANT~LOCALPRIVATE
-CountryCode~VARCHAR~Input~20~Country Code~BLZ~CONSTANT~BLZ
-RegionCode~VARCHAR~Input~50~Region Code~BF-BankFusion~CONSTANT~BF-BankFusion
-AddressLine1~VARCHAR~Input~256~AddressLine1~~PASSTHRU~SX20LF.SVNA1
-AddressLine2~VARCHAR~Input~256~AddressLine2~~PASSTHRU~SX20LF.SVNA2
-AddressLine3~VARCHAR~Input~256~AddressLine3~~PASSTHRU~SX20LF.SVNA3
-AddressLine4~VARCHAR~Input~256~AddressLine4~~PASSTHRU~SX20LF.SVNA4
-AddressLine5~VARCHAR~Input~256~AddressLine5~~PASSTHRU~SX20LF.SVNA5
-AddressLine6~VARCHAR~Input~256~AddressLine6~~~
-AddressLine7~VARCHAR~Input~256~AddressLine7~~~
-AddressLine8~VARCHAR~Input~256~AddressLine8~~~
-AddressLine9~VARCHAR~Input~256~AddressLine9~~~
-AddressLine10~VARCHAR~Input~256~AddressLine10~~~
-PostalCode~VARCHAR~Input~20~Postal Code~~PASSTHRU~SX20LF.SVPZIP
-City~VARCHAR~Input~50~City or Town~~~
-EntityType~VARCHAR~Default~~PARTY / ACCOUNT from generic code.~PARTY~CONSTANT~PARTY
-IsDefaultAddress~VARCHAR~Default~~is a default address~Y~CONSTANT~Y
-AddressType~VARCHAR~Default~~"From a configurable list of values such as: owner, renting, lodger, living with partner/parents, leasing."~ADD01~CONSTANT~ADD01
-AddressFromDate~DATE~Input~~"If address history is required, this must be a valid date. It can be used to ascertain whether the required address history has been met and prompt for further address history if it has not. Where address history is not required, the from date should aut"~Context.MigrationDate~~Context.MigrationDate
-AddressToDate~DATE~Input~~"A value of blank (the default) indicates that this is current, else the user must enter a valid date that must be after the From date."~~~
-DUNsNumberOfLocation~VARCHAR~Default~20~"The DUNS 9 digit number or Data Universal Numbering System is a unique identifier for businesses. DUNS numbers are assigned and maintained by Dun & Bradstreet (D&B) and are used for a variety of purposes, including establishing business credit, applying "~~~
-PrincipalContact~VARCHAR~Input~50~Name or position of person to whom correspondence will be addressed at this location.~~~
-StatusAtTheAddress~VARCHAR~Input~50~Status at address~LODGER~CONSTANT~LODGER
-PreferredStatementChannel~VARCHAR~Input~50~"Select from configurable list of those offered by the bank and valid for the party e.g. mail, internet, SWIFT. Configurable default value."~~~
-PreferredLanguage~VARCHAR~Default~~For customer documents and other communications. If not entered the bank default language will be used.~Context.PreferredLanguage~~Context.PreferredLanguage
-PreferredReportingCurrency~VARCHAR~Default~~"The preferred reporting currency for use with customer documents for this party. Select from list of ISO currency codes. If left blank, base currency will be used."~Context.BaseCurrencyCode~~Context.BaseCurrencyCode
-IsAgreetoContactForMarketing~VARCHAR~Input~~Agree to contact by bank for marketing purposes?~N~~N
-FeeWaiverIndicator~VARCHAR~Input~~Fee waiver eligibility indicator~N~~N
-IsBundlePricingEligibility~VARCHAR~Input~~Bundle pricing eligibility indicator~N~~N
-IsWHTLiable~VARCHAR~Input~1~Withholding liability~N~~N
-TaxCountry~VARCHAR~Input~20~Country Code~~~
-TaxIdNumber~VARCHAR~Input~50~Tax Number~~~
-IsTaxPayer~VARCHAR~Generate~1~Is a tax payer ?~~~
-IsRegistredForGST~VARCHAR~Input~1~Is registered for GST tax ?~N~~N
-GSTRegistrationNumber~VARCHAR~Input~50~Registration number for goods or services tax ?~~~
-TaxExcemptionId~VARCHAR~Input~50~Tax exemption status id~~~
-RelatedPartyID~VARCHAR~Input~30~Primary key used internally in the system~~~
-RelationshipType~VARCHAR~Input~50~"The relationship of the related party to the original party.The reciprocal relationship type will be associated with the original party. Codetype 1062 for personal parties, 1063 for enterprise parties"~~~
-PercentageOfOwnership~DECIMAL~Default~~"Percentage of ownership, liability or shareholding. Mandatory for certain types of relationship, such as owners, partners, limited liability partners and shareholders."~0~~0
-RelationshipFromDate~DATE~Default~~Must be a valid date. Default = processing date~Context.MigrationDate~~Context.MigrationDate
-RelationshipToDate~DATE~Default~~"A value of blank indicates that this is a current relationship, else the user must enter a valid date that must be after the from date"~Context.MigrationDate~~Context.MigrationDate
-Narrative~VARCHAR~Default~256~Narrative is for every relationship attached to a PARTY~~~
-ClosureDate~DATE~Default~~Party closure date time~1970-01-01~CONSTANT~1970-01-01
-WatchListStatus~VARCHAR~Default~~Watchlist Status~N~CONSTANT~N
-StatusReasonCode~VARCHAR~Default~~party status reason code is provided whenver party status is changed manually~~~
-StatusChangeDate~DATE~Default~~Party status changed date~1970-01-01~CONSTANT~1970-01-01
-StatusStartDate~DATE~Default~~"this is the date on which the status changed, or conviction or sentence began."~1970-01-01~CONSTANT~1970-01-01
-StatusEndDate~DATE~Default~~"This is the discharge or release date, or the status end date, which if entered must be greater than any start date."~1970-01-01~CONSTANT~1970-01-01
-JudgementType~VARCHAR~Default~~This is a generic code  for Court Judgement.~~~
-JudgementExpiryDate~DATE~Default~~"This is the date on which the judgment need no longer be reported (is ""spent""), and may need to be deleted from the system."~1970-01-01~CONSTANT~1970-01-01
-IsCustodial~VARCHAR~Default~~"True if the sentence resulted in detention~ otherwise false."~N~~N
-StatusChangeReason~VARCHAR~Default~~Reason Code~~~
-StatementProfileId~VARCHAR~Input~20~Customer Statement Profile Id.Primary key of CUSTSTMTPROFILE table~~~
-DelinquencyStatus~VARCHAR~Input~20~Deliquent Status of Customer.~~~
-DelinquencyLoanStatus~VARCHAR~Input~50~"When updating the Customer Worst Status marking, there should be two different fields to store the Worst Case Status for Lending accounts and Movement Accounts.  While determining the Worst  status ever recorded for Setting as 1,  the system should proceed to update with the worst ever delinquency stage of any one of the account of the Customer for the accounts group(Lending Accounts or Movement Accounts) and  the number of days or installments in arrears for the Worst ever Delinquency stage should not be the basis."~~~
-ChargeFundingAccount~VARCHAR~Input~20~Charge Funding Account~~~
-SignatureStatus~VARCHAR~Default~50~"Signature Status - Y if Siganature captured in SigCap. N if Signature not captured. Default as N, to be updated once SigCap migration is complete and update reference is SignatureTransactionReference"~N~~N
-SignatureTransactionReference~VARCHAR~Default~30~Signature Transaction Reference - NA is SiganatureStatus is N. Reference from SigCap to be updated if SignatureStatus is Y. Defaulted as NA. Reference to be captured once SigCap migration to be completed~NA~~NA
-PriorKYCStatus~VARCHAR~Default~50~Prior KYC Status. No Value to be defaulted~~~
-IsMobileBanking~VARCHAR~Default~1~While Party On Boarding Options must be provided to select Mobile Baking Facility~N~CONSTANT~N
-IsInternetBanking~VARCHAR~Default~1~While Party On Boarding Options must be provided to select Internet Baking Facility~N~CONSTANT~N
-~~~~~~__JOIN__~from map_cif map_cif
-~~~~~~__JOIN__~inner join gfpf on leg_cust_id = gfpf.gfcus||gfpf.gfclc
-~~~~~~__JOIN__~left join bgpf on gfpf.gfcus = bgpf.bgcus and nvl(gfpf.gfclc,' ') = nvl(bgpf.bgclc, ' ')
-~~~~~~__JOIN__~left join sx20lf sx20lf on gfpf.gfcus = sx20lf.sxcus and nvl(gfpf.gfclc,' ') = nvl(sx20lf.sxclc, ' ')
+Column_Name	DataType	MaxLength	Mapping Type	Mapped Value
+PartyId	VARCHAR	120	PASSTHRU	GFPF.GFCUS || GFPF.GFCLC
+PartyType	VARCHAR		PASSTHRU	CONVERT_CODES('CUST_TYPE',GFPF.GFCTP)
+PartySubType	VARCHAR		PASSTHRU	GFPF.GFCTP
+PartyCategory	VARCHAR			
+PartyName	VARCHAR	255	PASSTHRU	GFPF.GFCUN
+PartyEquivalentName	VARCHAR	255		
+ShortName	VARCHAR	60	PASSTHRU	GFPF.GFDAS
+EquivalentShortName	VARCHAR	60		
+Language	VARCHAR		CONSTANT	EN
+PartyAcquisitionDate	TIMESTAMP		PASSTHRU	GFPF.GFCOD
+RelationshipManagerID	VARCHAR	30	PASSTHRU	GFPF.GFACO
+PartyStatus	VARCHAR			
+IsMultiHost	VARCHAR	1		
+AlphaCode	VARCHAR			
+BranchCode	VARCHAR	8	PASSTHRU	GFPF.GFBRNM
+KYCStatus	VARCHAR			
+KYCExpiryDate	DATE	10	PASSTHRU	BGPF.BGC034
+KYCCautionaryDate	DATE			
+LastModifiedDate	DATE		PASSTHRU	GFPF.GFDLM
+CommonSequence	VARCHAR	20		
+PartyStatusID	VARCHAR			
+StatusType	VARCHAR			
+Country	VARCHAR			
+Region	VARCHAR			
+LocalityType	VARCHAR			
+CountryCode	VARCHAR	20		
+RegionCode	VARCHAR	50		
+AddressLine1	VARCHAR	256	PASSTHRU	SX20LF.SVNA1
+AddressLine2	VARCHAR	256	PASSTHRU	SX20LF.SVNA2
+AddressLine3	VARCHAR	256	PASSTHRU	SX20LF.SVNA3
+AddressLine4	VARCHAR	256	PASSTHRU	SX20LF.SVNA4
+AddressLine5	VARCHAR	256	PASSTHRU	SX20LF.SVNA5
+AddressLine6	VARCHAR	256		
+AddressLine7	VARCHAR	256		
+AddressLine8	VARCHAR	256		
+AddressLine9	VARCHAR	256		
+AddressLine10	VARCHAR	256		
+PostalCode	VARCHAR	20	PASSTHRU	SX20LF.SVPZIP
+City	VARCHAR	50		
+EntityType	VARCHAR			
+IsDefaultAddress	VARCHAR			
+AddressType	VARCHAR			
+AddressFromDate	DATE			
+AddressToDate	DATE			
+DUNsNumberOfLocation	VARCHAR	20		
+PrincipalContact	VARCHAR	50		
+StatusAtTheAddress	VARCHAR	50		
+PreferredStatementChannel	VARCHAR	50		
+PreferredLanguage	VARCHAR			
+PreferredReportingCurrency	VARCHAR			
+IsAgreetoContactForMarketing	VARCHAR			
+FeeWaiverIndicator	VARCHAR			
+IsBundlePricingEligibility	VARCHAR			
+IsWHTLiable	VARCHAR	1		
+TaxCountry	VARCHAR	20		
+TaxIdNumber	VARCHAR	50		
+IsTaxPayer	VARCHAR	1		
+IsRegistredForGST	VARCHAR	1		
+GSTRegistrationNumber	VARCHAR	50		
+TaxExcemptionId	VARCHAR	50		
+RelatedPartyID	VARCHAR	30		
+RelationshipType	VARCHAR	50		
+PercentageOfOwnership	DECIMAL			
+RelationshipFromDate	DATE			
+RelationshipToDate	DATE			
+Narrative	VARCHAR	256		
+ClosureDate	DATE			
+WatchListStatus	VARCHAR			
+StatusReasonCode	VARCHAR			
+StatusChangeDate	DATE			
+StatusStartDate	DATE			
+StatusEndDate	DATE			
+JudgementType	VARCHAR			
+JudgementExpiryDate	DATE			
+IsCustodial	VARCHAR			
+StatusChangeReason	VARCHAR			
+StatementProfileId	VARCHAR	20		
+DelinquencyStatus	VARCHAR	20		
+DelinquencyLoanStatus	VARCHAR	50		
+ChargeFundingAccount	VARCHAR	20		
+SignatureStatus	VARCHAR	50		
+SignatureTransactionReference	VARCHAR	30		
+PriorKYCStatus	VARCHAR	50		
+IsMobileBanking	VARCHAR	1		
+IsInternetBanking	VARCHAR	1		
+			__JOIN__	from map_cif map_cif
+			__JOIN__	inner join gfpf on leg_cust_id = gfpf.gfcus||gfpf.gfclc
+			__JOIN__	left join bgpf on gfpf.gfcus = bgpf.bgcus and nvl(gfpf.gfclc,' ') = nvl(bgpf.bgclc, ' ')
+			__JOIN__	left join sx20lf sx20lf on gfpf.gfcus = sx20lf.sxcus and nvl(gfpf.gfclc,' ') = nvl(sx20lf.sxclc, ' ')
