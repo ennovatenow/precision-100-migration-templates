@@ -1,2 +1,3 @@
 create-eq3
+create-precision-eq3
 create-essence
