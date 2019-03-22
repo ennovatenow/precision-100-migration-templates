@@ -1,2 +1,1 @@
 10,create_table.sql,sql
-20,create_procedures.sql,sql
