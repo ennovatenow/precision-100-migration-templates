@@ -1,0 +1,57 @@
+Column_Name	DataType	MaxLength	Mapping Type	Mapping Value
+PartyId	VARCHAR	30		GFPF.GFCPNC
+PartyName	VARCHAR	300		GFPF.GFCUN
+FirstName	VARCHAR	60		
+MiddleName	VARCHAR	60		
+LastName	VARCHAR	60		
+NameType	VARCHAR	50		
+Suffix	VARCHAR	50		
+Title	VARCHAR	50		SX20LF.SVCSA
+IsPreffered	VARCHAR	1		Y
+CommonSequence	VARCHAR	20		
+NationalIDType	VARCHAR	50		BGPF.BG0001
+NationalID	VARCHAR	50		BGPF.BG0002
+DateOfBirth	DATE			BGPF.BG0007
+IsPreviousIOrOtherName	VARCHAR	1		
+EmploymentStatus	VARCHAR	50		BGPF.BG0010
+CivilStatus	VARCHAR	50		
+MaritalStatusDate	DATE			
+Gender	VARCHAR	50		BGPF.BG0008
+CountryOfBirth	VARCHAR	20		GFPF.GFCNAP
+CountryOfResidence	VARCHAR	20		GFPF.GFCNAL
+CountryOfCitizenship	VARCHAR	20		GFPF.GFCNAP
+BirthTown	VARCHAR	100		
+ResidentStatus	VARCHAR	50		CASE WHEN  GFPF.GFCNAP <> GFPF.GFCNAL THEN 'Non-Resident Foreigner' else 'Resident' END
+NumberOfDependents	SMALLINT			
+MotherMaidenName	VARCHAR	100		BGPF.BGC033
+FatherName	VARCHAR	100		BGPF.BGC034
+SpouseName	VARCHAR	100		BGPF.BGC035
+SurNameAtBirth	VARCHAR	25		
+EducationLevel	VARCHAR	50		
+JobTitle	VARCHAR	50		
+NameOfTheEmployer	VARCHAR	256		
+EmploymentStartDate 	DATE			
+EmploymentEndDate	DATE			
+PaymentMethod	VARCHAR	50		
+PaymentFrequency	VARCHAR	50		
+CurrencyCode	VARCHAR	3		
+GrossAnnualSalary	DECIMAL(24,6)			
+EmploymentType	VARCHAR	50		
+TypeOfBusiness	VARCHAR	50		
+EmployeeID	VARCHAR	50		
+ContarctEndDate	DATE			
+EmployersTelephone	VARCHAR	20		
+BuildingNameORNumber	VARCHAR	255		
+AddressId	VARCHAR	20		
+IsCurrentEmployer	VARCHAR	1		
+VERSIONNUM	INTEGER			
+GrandfatherName	VARCHAR	25		
+IsArchive	VARCHAR	1		
+IsDelete	VARCHAR	1		
+LastApprovedBy	VARCHAR	30		
+LastModifiedBy	VARCHAR	30		
+LastUpdatedDateTime	TIMESTAMP			
+			__JOIN__	from map_cif map_cif
+			__JOIN__	inner join gfpf on leg_cust_id = gfpf.gfcus||gfpf.gfclc
+			__JOIN__	left join bgpf on gfpf.gfcus = bgpf.bgcus and nvl(gfpf.gfclc,' ') = nvl(bgpf.bgclc, ' ')
+			__JOIN__	left join sx20lf sx20lf on gfpf.gfcus = sx20lf.sxcus and nvl(gfpf.gfclc,' ') = nvl(sx20lf.sxclc, ' ')
