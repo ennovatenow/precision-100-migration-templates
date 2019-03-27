@@ -12,12 +12,12 @@ BEGIN
   END;
 
   IF length(v_temp_date)= 6 THEN 
-    out_date := substr(v_temp_date,5,2)||'/'||substr(v_temp_date,3,2)||'/'||'19'||substr(v_temp_date,1,2);
+    out_date := '19'||substr(v_temp_date,1,2)||'-'||substr(v_temp_date,3,2)||'-'||substr(v_temp_date,5,2);
   ELSE
     IF substr(v_temp_date,1,1) = 0 THEN 
-      out_date := substr(v_temp_date,6,2)||'/'||substr(v_temp_date,4,2)||'/'||'19'||substr(v_temp_date,2,2);
+      out_date := '19'||substr(v_temp_date,2,2)||'-'||substr(v_temp_date,4,2)||'-'||substr(v_temp_date,6,2);
     ELSE
-      out_date := substr(v_temp_date,6,2)||'/'||substr(v_temp_date,4,2)||'/'||'20'||substr(v_temp_date,2,2);
+      out_date := '20'||substr(v_temp_date,2,2)||'-'||substr(v_temp_date,4,2)||'-'||substr(v_temp_date,6,2);
     END IF;
   END IF;
 
