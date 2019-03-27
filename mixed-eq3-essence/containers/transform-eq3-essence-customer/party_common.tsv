@@ -51,7 +51,7 @@ SignatureTransactionReference	VARCHAR	30
 PriorKYCStatus	VARCHAR	50		
 IsMobileBanking	VARCHAR	1		
 IsInternetBanking	VARCHAR	1		
-IsConsolidateStatement	VARCHAR		CONSTANT	N	
+IsConsolidateStatement	VARCHAR		CONSTANT	N
 			__JOIN__	from map_cif map_cif
 			__JOIN__	inner join gfpf on leg_cust_id = gfpf.gfcus||gfpf.gfclc
 			__JOIN__	left join bgpf on gfpf.gfcus = bgpf.bgcus and nvl(gfpf.gfclc,' ') = nvl(bgpf.bgclc, ' ')
