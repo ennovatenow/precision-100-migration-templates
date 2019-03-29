@@ -6,3 +6,5 @@
 60,SX20LF,smartloader
 70,SVPF,smartloader
 80,BGPF,smartloader
+90,RJPF,smartloader
+80,RIPF,smartloader
