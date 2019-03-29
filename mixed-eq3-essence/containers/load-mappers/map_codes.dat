@@ -13,7 +13,7 @@ CUST_REL_TYPE,01,Husband,Husband,Husband,Y
 CUST_REL_TYPE,02,Wife,Wife,Wife,N
 CUST_REL_TYPE,03,Son,Son,Son,N
 CUST_REL_TYPE,04,Mother,Mother,Mother,N
-CONSTANT,BUSINESS_DATE,Business date of the Migration data,2019-03-21,Business Date of the Migration Data,Y
+CONSTANT,BUSINESS_DATE,Business date of the Migration data,2019-03-21,Business Date of the Migration Data,N
 CONSTANT,PREFERRED_CCY,Default currency code,INR,Default Currency Code,N
 CONSTANT,CIVIL_STATUS,Civil Status,Unknown,Unknown,N
 CONSTANT,DEF_BIRTH_DATE,Default  Birth Date,1960-02-29,Default  Birth Date,N
@@ -272,3 +272,31 @@ COUNTRY,EH,Western Sahara,EH,Western Sahara,N
 COUNTRY,YE,Yemen,YE,Yemen,N
 COUNTRY,ZM,Zambia,ZM,Zambia,N
 COUNTRY,ZW,Zimbabwe,ZW,Zimbabwe,N
+TITLE,Mr.,Mr.,Mr.,Mr.,N
+TITLE,Mrs.,Mrs.,Mrs.,Mrs.,N
+TITLE,Miss,Miss,Miss,Miss,N
+TITLE,Dr.,Dr.,Dr.,Dr.,N
+TITLE,Prof.,Prof.,Prof.,Prof.,N
+TITLE,Master,Master,Master,Master,N
+TITLE,Captain,Captain,Captain,Captain,N
+TITLE,Lt.,Lt.,Lt.,Lt.,N
+TITLE,w/t,w/t,w/t,w/t,N
+TITLE,Haji,Haji,Haji,Haji,N
+TITLE,Eng.,Eng.,Eng.,Eng.,N
+TITLE,Sr.,Sr.,Sr.,Sr.,N
+TITLE,Inspector,Inspector,Inspector,Inspector,N
+TITLE,Sgt.,Sgt.,Sgt.,Sgt.,N
+TITLE,Rev.,Rev.,Rev.,Rev.,N
+TITLE,W/ro,W/ro,W/ro,W/ro,N
+TITLE,Ato,Ato,Ato,Ato,N
+TITLE,Pastor.,Pastor.,Pastor.,Pastor.,N
+TITLE,Unknown,Unknown,Unknown,Unknown,Y
+EMP_STATUS,Not employed,Not employed,Not employed,Not employed,N
+EMP_STATUS,Temporary,Temporary,Temporary,Temporary,N
+EMP_STATUS,Student,Student,Student,Student,N
+EMP_STATUS,Part time,Part time,Part time,Part time,N
+EMP_STATUS,Minor,Minor,Minor,Minor,N
+EMP_STATUS,Full time,Full time,Full time,Full time,N
+EMP_STATUS,Contractor,Contractor,Contractor,Contractor,N
+EMP_STATUS,Unknown,Unknown,Unknown,Unknown,Y
+EMP_STATUS,Self Employed,Self Employed,Self Employed,Self Employed,N
