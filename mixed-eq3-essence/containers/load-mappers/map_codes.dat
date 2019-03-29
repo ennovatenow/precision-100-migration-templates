@@ -1,18 +1,272 @@
-CODE_TYPE,LEG_CODE,LEG_CODE_DESC,DEST_CODE,DEST_CODE_DESC,IS_DEFAULT
-CUST_TYPE,IND,IND,1062,1062,Y
-CUST_TYPE,CORP,CORPORATE,1063,1063,N
-CUST_SUB_TYPE,EA,Accountant,Accountant,Accountant,N
-CUST_SUB_TYPE,EY,Signatory,Signatory,Accountant,Y
-CUST_NATIONALIDTYPE,PS,NationalID,A National Identity Card, National ID,Y
-CUST_NATIONALIDTYPE,DL,Driving License,Driver's Licence,Driving License,N
-CUST_NATIONALIDTYPE,PA,Passport,A Current Passport,Passport,N
-CUST_GENDER,MA,Male,Male,Male,N
-CUST_GENDER,FE,FeMale,Female,Female,N
-CUST_GENDER,TR,Not available,Unknown,Unknown,Y
-CUST_REL_TYPE,
-CUST_REL_TYPE,01,Husband,Husband,Husband,Y
-CUST_REL_TYPE,02,Wife,Wife,Wife,N
-CUST_REL_TYPE,03,Son,Son,Son,N
-CUST_REL_TYPE,04,Mother,Mother,Mother,N
-CONSTANT,BUSINESS_DATE,Business date of the Migration data,2019-03-21,Business Date of the Migration Data,N
-CONSTANT,PREFERRED_CCY,Default currency code,INR,Default Currency Code,N
+CODE_TYPE,LEG_CODE,LEG_CODE_DESC,DEST_CODE,DEST_CODE_DESC
+CUST_TYPE,IND,IND,1062,1062
+CUST_TYPE,CORP,CORPORATE,1063,1063
+CUST_SUB_TYPE,EA,Accountant,Accountant,Accountant
+CUST_SUB_TYPE,EY,Signatory,Signatory,Accountant
+CUST_NATIONALIDTYPE,PS,NationalID,A National Identity Card, National ID
+CUST_NATIONALIDTYPE,DL,Driving License,Driver's Licence,Driving License
+CUST_NATIONALIDTYPE,PA,Passport,A Current Passport,Passport
+CUST_GENDER,MA,Male,Male,Male
+CUST_GENDER,FE,FeMale,Female,Female
+CUST_GENDER,TR,Not available,Unknown,Unknown
+CUST_REL_TYPE,01,Husband,Husband,Husband
+CUST_REL_TYPE,02,Wife,Wife,Wife
+CUST_REL_TYPE,03,Son,Son,Son
+CUST_REL_TYPE,04,Mother,Mother,Mother
+CONSTANT,BUSINESS_DATE,Business date of the Migration data,2019-03-21,Business Date of the Migration Data
+CONSTANT,PREFERRED_CCY,Default currency code,INR,Default Currency Code
+CONSTANT,CIVIL_STATUS,Civil Status,Unknown,Unknown
+CONSTANT,DEF_BIRTH_DATE,Default  Birth Date,1960-02-29,Default  Birth Date
+COUNTRY,AF,Afghanistan,AF,Afghanistan
+COUNTRY,AX,Aland Islands,AX,Aland Islands
+COUNTRY,AL,Albania,AL,Albania
+COUNTRY,DZ,Algeria,DZ,Algeria
+COUNTRY,AS,American Samoa,AS,American Samoa
+COUNTRY,AD,Andorra,AD,Andorra
+COUNTRY,AO,Angola,AO,Angola
+COUNTRY,AI,Anguilla,AI,Anguilla
+COUNTRY,AQ,Antarctica,AQ,Antarctica
+COUNTRY,AG,Antigua and Barbuda,AG,Antigua and Barbuda
+COUNTRY,AR,Argentina,AR,Argentina
+COUNTRY,AM,Armenia,AM,Armenia
+COUNTRY,AW,Aruba,AW,Aruba
+COUNTRY,AU,Australia,AU,Australia
+COUNTRY,AT,Austria,AT,Austria
+COUNTRY,AZ,Azerbaijan,AZ,Azerbaijan
+COUNTRY,BS,Bahamas,BS,Bahamas
+COUNTRY,BH,Bahrain,BH,Bahrain
+COUNTRY,BD,Bangladesh,BD,Bangladesh
+COUNTRY,BB,Barbados,BB,Barbados
+COUNTRY,BY,Belarus,BY,Belarus
+COUNTRY,BE,Belgium,BE,Belgium
+COUNTRY,BZ,Belize,BZ,Belize
+COUNTRY,BJ,Benin,BJ,Benin
+COUNTRY,BM,Bermuda,BM,Bermuda
+COUNTRY,BT,Bhutan,BT,Bhutan
+COUNTRY,BO,Bolivia,BO,Bolivia
+COUNTRY,BQ,Bonaire, Sint Eustatius and Saba,BQ,Bonaire, Sint Eustatius and Saba
+COUNTRY,BA,Bosnia and Herzegovina,BA,Bosnia and Herzegovina
+COUNTRY,BW,Botswana,BW,Botswana
+COUNTRY,BV,Bouvet Island,BV,Bouvet Island
+COUNTRY,BR,Brazil,BR,Brazil
+COUNTRY,IO,British Indian Ocean Territory,IO,British Indian Ocean Territory
+COUNTRY,BN,Brunei Darussalam,BN,Brunei Darussalam
+COUNTRY,BG,Bulgaria,BG,Bulgaria
+COUNTRY,BF,Burkina Faso,BF,Burkina Faso
+COUNTRY,BI,Burundi,BI,Burundi
+COUNTRY,KH,Cambodia,KH,Cambodia
+COUNTRY,CM,Cameroon,CM,Cameroon
+COUNTRY,CA,Canada,CA,Canada
+COUNTRY,CV,Cape Verde,CV,Cape Verde
+COUNTRY,KY,Cayman Islands,KY,Cayman Islands
+COUNTRY,CF,Central African Republic,CF,Central African Republic
+COUNTRY,TD,Chad,TD,Chad
+COUNTRY,CL,Chile,CL,Chile
+COUNTRY,CN,China,CN,China
+COUNTRY,CX,Christmas Island,CX,Christmas Island
+COUNTRY,CC,Cocos (Keeling) Islands,CC,Cocos (Keeling) Islands
+COUNTRY,CO,Colombia,CO,Colombia
+COUNTRY,KM,Comoros,KM,Comoros
+COUNTRY,CG,Congo,CG,Congo
+COUNTRY,CD,Congo, The Democratic Republic of ,CD,Congo, The Democratic Republic of 
+COUNTRY,CK,Cook Islands,CK,Cook Islands
+COUNTRY,CR,Costa Rica,CR,Costa Rica
+COUNTRY,CI,Cote d'Ivoire,CI,Cote d'Ivoire
+COUNTRY,HR,Croatia,HR,Croatia
+COUNTRY,CU,Cuba,CU,Cuba
+COUNTRY,CW,Curaçao,CW,Curaçao
+COUNTRY,CY,Cyprus,CY,Cyprus
+COUNTRY,CZ,Czechia,CZ,Czechia
+COUNTRY,DK,Denmark,DK,Denmark
+COUNTRY,DJ,Djibouti,DJ,Djibouti
+COUNTRY,DM,Dominica,DM,Dominica
+COUNTRY,DO,Dominican Republic,DO,Dominican Republic
+COUNTRY,EC,Ecuador,EC,Ecuador
+COUNTRY,EG,Egypt,EG,Egypt
+COUNTRY,SV,El Salvador,SV,El Salvador
+COUNTRY,GQ,Equatorial Guinea,GQ,Equatorial Guinea
+COUNTRY,ER,Eritrea,ER,Eritrea
+COUNTRY,EE,Estonia,EE,Estonia
+COUNTRY,ET,Ethiopia,ET,Ethiopia
+COUNTRY,FK,Falkland Islands (Malvinas),FK,Falkland Islands (Malvinas)
+COUNTRY,FO,Faroe Islands,FO,Faroe Islands
+COUNTRY,FJ,Fiji,FJ,Fiji
+COUNTRY,FI,Finland,FI,Finland
+COUNTRY,FR,France,FR,France
+COUNTRY,GF,French Guiana,GF,French Guiana
+COUNTRY,PF,French Polynesia,PF,French Polynesia
+COUNTRY,TF,French Southern Territories,TF,French Southern Territories
+COUNTRY,GA,Gabon,GA,Gabon
+COUNTRY,GM,Gambia,GM,Gambia
+COUNTRY,GE,Georgia,GE,Georgia
+COUNTRY,DE,Germany,DE,Germany
+COUNTRY,GH,Ghana,GH,Ghana
+COUNTRY,GI,Gibraltar,GI,Gibraltar
+COUNTRY,GR,Greece,GR,Greece
+COUNTRY,GL,Greenland,GL,Greenland
+COUNTRY,GD,Grenada,GD,Grenada
+COUNTRY,GP,Guadeloupe,GP,Guadeloupe
+COUNTRY,GU,Guam,GU,Guam
+COUNTRY,GT,Guatemala,GT,Guatemala
+COUNTRY,GG,Guernsey,GG,Guernsey
+COUNTRY,GN,Guinea,GN,Guinea
+COUNTRY,GW,Guinea-Bissau,GW,Guinea-Bissau
+COUNTRY,GY,Guyana,GY,Guyana
+COUNTRY,HT,Haiti,HT,Haiti
+COUNTRY,HM,Heard and Mc Donald Islands,HM,Heard and Mc Donald Islands
+COUNTRY,VA,Holy See (Vatican City State),VA,Holy See (Vatican City State)
+COUNTRY,HN,Honduras,HN,Honduras
+COUNTRY,HK,Hong Kong,HK,Hong Kong
+COUNTRY,HU,Hungary,HU,Hungary
+COUNTRY,IS,Iceland,IS,Iceland
+COUNTRY,IN,India,IN,India
+COUNTRY,ID,Indonesia,ID,Indonesia
+COUNTRY,IR,Iran, Islamic Republic of,IR,Iran, Islamic Republic of
+COUNTRY,IQ,Iraq,IQ,Iraq
+COUNTRY,IE,Ireland,IE,Ireland
+COUNTRY,IM,Isle of Man,IM,Isle of Man
+COUNTRY,IL,Israel,IL,Israel
+COUNTRY,IT,Italy,IT,Italy
+COUNTRY,JM,Jamaica,JM,Jamaica
+COUNTRY,JP,Japan,JP,Japan
+COUNTRY,JE,Jersey,JE,Jersey
+COUNTRY,JO,Jordan,JO,Jordan
+COUNTRY,KZ,Kazakstan,KZ,Kazakstan
+COUNTRY,KE,Kenya,KE,Kenya
+COUNTRY,KI,Kiribati,KI,Kiribati
+COUNTRY,KP,Korea, Democratic People's Republic of,KP,Korea, Democratic People's Republic of
+COUNTRY,KR,Korea, Republic of,KR,Korea, Republic of
+COUNTRY,XK,Kosovo (temporary code),XK,Kosovo (temporary code)
+COUNTRY,KW,Kuwait,KW,Kuwait
+COUNTRY,KG,Kyrgyzstan,KG,Kyrgyzstan
+COUNTRY,LA,Lao, People's Democratic Republic,LA,Lao, People's Democratic Republic
+COUNTRY,LV,Latvia,LV,Latvia
+COUNTRY,LB,Lebanon,LB,Lebanon
+COUNTRY,LS,Lesotho,LS,Lesotho
+COUNTRY,LR,Liberia,LR,Liberia
+COUNTRY,LY,Libyan Arab Jamahiriya,LY,Libyan Arab Jamahiriya
+COUNTRY,LI,Liechtenstein,LI,Liechtenstein
+COUNTRY,LT,Lithuania,LT,Lithuania
+COUNTRY,LU,Luxembourg,LU,Luxembourg
+COUNTRY,MO,Macao,MO,Macao
+COUNTRY,MK,Macedonia, The Former Yugoslav Republic Of,MK,Macedonia, The Former Yugoslav Republic Of
+COUNTRY,MG,Madagascar,MG,Madagascar
+COUNTRY,MW,Malawi,MW,Malawi
+COUNTRY,MY,Malaysia,MY,Malaysia
+COUNTRY,MV,Maldives,MV,Maldives
+COUNTRY,ML,Mali,ML,Mali
+COUNTRY,MT,Malta,MT,Malta
+COUNTRY,MH,Marshall Islands,MH,Marshall Islands
+COUNTRY,MQ,Martinique,MQ,Martinique
+COUNTRY,MR,Mauritania,MR,Mauritania
+COUNTRY,MU,Mauritius,MU,Mauritius
+COUNTRY,YT,Mayotte,YT,Mayotte
+COUNTRY,MX,Mexico,MX,Mexico
+COUNTRY,FM,Micronesia, Federated States of,FM,Micronesia, Federated States of
+COUNTRY,MD,Moldova, Republic of,MD,Moldova, Republic of
+COUNTRY,MC,Monaco,MC,Monaco
+COUNTRY,MN,Mongolia,MN,Mongolia
+COUNTRY,ME,Montenegro,ME,Montenegro
+COUNTRY,MS,Montserrat,MS,Montserrat
+COUNTRY,MA,Morocco,MA,Morocco
+COUNTRY,MZ,Mozambique,MZ,Mozambique
+COUNTRY,MM,Myanmar,MM,Myanmar
+COUNTRY,NA,Namibia,NA,Namibia
+COUNTRY,NR,Nauru,NR,Nauru
+COUNTRY,NP,Nepal,NP,Nepal
+COUNTRY,NL,Netherlands,NL,Netherlands
+COUNTRY,AN,Netherlands Antilles,AN,Netherlands Antilles
+COUNTRY,NC,New Caledonia,NC,New Caledonia
+COUNTRY,NZ,New Zealand,NZ,New Zealand
+COUNTRY,NI,Nicaragua,NI,Nicaragua
+COUNTRY,NE,Niger,NE,Niger
+COUNTRY,NG,Nigeria,NG,Nigeria
+COUNTRY,NU,Niue,NU,Niue
+COUNTRY,NF,Norfolk Island,NF,Norfolk Island
+COUNTRY,MP,Northern Mariana Islands,MP,Northern Mariana Islands
+COUNTRY,NO,Norway,NO,Norway
+COUNTRY,OM,Oman,OM,Oman
+COUNTRY,PK,Pakistan,PK,Pakistan
+COUNTRY,PW,Palau,PW,Palau
+COUNTRY,PS,Palestinian Territory, Occupied,PS,Palestinian Territory, Occupied
+COUNTRY,PA,Panama,PA,Panama
+COUNTRY,PG,Papua New Guinea,PG,Papua New Guinea
+COUNTRY,PY,Paraguay,PY,Paraguay
+COUNTRY,PE,Peru,PE,Peru
+COUNTRY,PH,Philippines,PH,Philippines
+COUNTRY,PN,Pitcairn,PN,Pitcairn
+COUNTRY,PL,Poland,PL,Poland
+COUNTRY,PT,Portugal,PT,Portugal
+COUNTRY,PR,Puerto Rico,PR,Puerto Rico
+COUNTRY,QA,Qatar,QA,Qatar
+COUNTRY,RS,Republic of Serbia,RS,Republic of Serbia
+COUNTRY,RE,Reunion,RE,Reunion
+COUNTRY,RO,Romania,RO,Romania
+COUNTRY,RU,Russia Federation,RU,Russia Federation
+COUNTRY,RW,Rwanda,RW,Rwanda
+COUNTRY,BL,Saint Barthélemy,BL,Saint Barthélemy
+COUNTRY,SH,Saint Helena,SH,Saint Helena
+COUNTRY,KN,Saint Kitts & Nevis,KN,Saint Kitts & Nevis
+COUNTRY,LC,Saint Lucia,LC,Saint Lucia
+COUNTRY,MF,Saint Martin,MF,Saint Martin
+COUNTRY,PM,Saint Pierre and Miquelon,PM,Saint Pierre and Miquelon
+COUNTRY,VC,Saint Vincent and the Grenadines,VC,Saint Vincent and the Grenadines
+COUNTRY,WS,Samoa,WS,Samoa
+COUNTRY,SM,San Marino,SM,San Marino
+COUNTRY,ST,Sao Tome and Principe,ST,Sao Tome and Principe
+COUNTRY,SA,Saudi Arabia,SA,Saudi Arabia
+COUNTRY,SN,Senegal,SN,Senegal
+COUNTRY,CS,Serbia and Montenegro,CS,Serbia and Montenegro
+COUNTRY,SC,Seychelles,SC,Seychelles
+COUNTRY,SL,Sierra Leone,SL,Sierra Leone
+COUNTRY,SG,Singapore,SG,Singapore
+COUNTRY,SX,Sint Maarten,SX,Sint Maarten
+COUNTRY,SK,Slovakia,SK,Slovakia
+COUNTRY,SI,Slovenia,SI,Slovenia
+COUNTRY,SB,Solomon Islands,SB,Solomon Islands
+COUNTRY,SO,Somalia,SO,Somalia
+COUNTRY,ZA,South Africa,ZA,South Africa
+COUNTRY,GS,South Georgia & The South Sandwich Islands,GS,South Georgia & The South Sandwich Islands
+COUNTRY,SS,South Sudan,SS,South Sudan
+COUNTRY,ES,Spain,ES,Spain
+COUNTRY,LK,Sri Lanka,LK,Sri Lanka
+COUNTRY,SD,Sudan,SD,Sudan
+COUNTRY,SR,Suriname,SR,Suriname
+COUNTRY,SJ,Svalbard and Jan Mayen,SJ,Svalbard and Jan Mayen
+COUNTRY,SZ,Swaziland,SZ,Swaziland
+COUNTRY,SE,Sweden,SE,Sweden
+COUNTRY,CH,Switzerland,CH,Switzerland
+COUNTRY,SY,Syrian Arab Republic,SY,Syrian Arab Republic
+COUNTRY,TW,Taiwan, Province of China,TW,Taiwan, Province of China
+COUNTRY,TJ,Tajikistan,TJ,Tajikistan
+COUNTRY,TZ,Tanzania, United Republic of,TZ,Tanzania, United Republic of
+COUNTRY,TH,Thailand,TH,Thailand
+COUNTRY,TL,Timor-Leste,TL,Timor-Leste
+COUNTRY,TG,Togo,TG,Togo
+COUNTRY,TK,Tokelau,TK,Tokelau
+COUNTRY,TO,Tonga,TO,Tonga
+COUNTRY,TT,Trinidad and Tobago,TT,Trinidad and Tobago
+COUNTRY,TN,Tunisia,TN,Tunisia
+COUNTRY,TR,Turkey,TR,Turkey
+COUNTRY,XT,Turkish Rep N Cyprus,XT,Turkish Rep N Cyprus
+COUNTRY,TM,Turkmenistan,TM,Turkmenistan
+COUNTRY,TC,Turks and Caicos Islands,TC,Turks and Caicos Islands
+COUNTRY,TV,Tuvalu,TV,Tuvalu
+COUNTRY,UG,Uganda,UG,Uganda
+COUNTRY,UA,Ukraine,UA,Ukraine
+COUNTRY,AE,United Arab Emirates,AE,United Arab Emirates
+COUNTRY,GB,United Kingdom,GB,United Kingdom
+COUNTRY,US,United States,US,United States
+COUNTRY,UM,United States Minor Outlying Islands,UM,United States Minor Outlying Islands
+COUNTRY,UY,Uruguay,UY,Uruguay
+COUNTRY,UZ,Uzbekistan,UZ,Uzbekistan
+COUNTRY,VU,Vanuatu,VU,Vanuatu
+COUNTRY,VE,Venezuela,VE,Venezuela
+COUNTRY,VN,Vietnam,VN,Vietnam
+COUNTRY,VG,Virgin Islands, British,VG,Virgin Islands, British
+COUNTRY,VI,Virgin Islands, U.S.,VI,Virgin Islands, U.S.
+COUNTRY,WF,Wallis and Futuna,WF,Wallis and Futuna
+COUNTRY,EH,Western Sahara,EH,Western Sahara
+COUNTRY,YE,Yemen,YE,Yemen
+COUNTRY,ZM,Zambia,ZM,Zambia
+COUNTRY,ZW,Zimbabwe,ZW,Zimbabwe
