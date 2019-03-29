@@ -40,8 +40,8 @@ TaxIdNumber	VARCHAR	50
 IsRegistredForGST	VARCHAR	1	CONSTANT	N
 GSTRegistrationNumber	VARCHAR	50		
 TaxExcemptionId	VARCHAR	50		
-RelatedPartyID	VARCHAR	30	PASSTHRU	CASE WHEN RJRCUS IS NOT NULL THEN NVL(RJRCUS,TO_NCHAR(' ')) ELSE TO_NCHAR(' ') END
-RelationshipType	VARCHAR	50	PASSTHRU	CASE WHEN RJRCUS IS NOT NULL THEN CONVERT_CODES('CUST_REL_TYPE', TO_NCHAR(RJREL)) ELSE TO_NCHAR(' ') END
+RelatedPartyID	VARCHAR	30	PASSTHRU	CASE WHEN RJRCUS IS NOT NULL THEN NVL(RJRCUS,TO_NCHAR('')) ELSE TO_NCHAR('') END
+RelationshipType	VARCHAR	50	PASSTHRU	CASE WHEN RJRCUS IS NOT NULL THEN CONVERT_CODES('CUST_REL_TYPE', TO_NCHAR(RJREL)) ELSE TO_NCHAR('') END
 StatementProfileId	VARCHAR	20		
 DelinquencyStatus	VARCHAR	20		
 DelinquencyLoanStatus	VARCHAR	50		
@@ -55,5 +55,5 @@ IsConsolidateStatement	VARCHAR		CONSTANT	N
 			__JOIN__	from map_cif map_cif
 			__JOIN__	inner join gfpf on leg_cust_id = gfpf.gfcus||gfpf.gfclc 
 			__JOIN__	left join bgpf on gfpf.gfcus = bgpf.bgcus and nvl(gfpf.gfclc,' ') = nvl(bgpf.bgclc, ' ') 
-			__JOIN__	left join sx20lf sx20lf on gfpf.gfcus = sx20lf.sxcus and nvl(gfpf.gfclc,' ') = nvl(sx20lf.sxclc, ' ')
+			__JOIN__	left join (SELECT * FROM sx20lf WHERE SXPRIM = 'P') sx20lf on gfpf.gfcus = sx20lf.sxcus and nvl(gfpf.gfclc,' ') = nvl(sx20lf.sxclc, ' ')
 			__JOIN__	left join rjpf rjpf on rjpf.rjcus = gfpf.gfcus and nvl(gfpf.gfclc,' ') = nvl(rjpf.rjclc, ' ')
