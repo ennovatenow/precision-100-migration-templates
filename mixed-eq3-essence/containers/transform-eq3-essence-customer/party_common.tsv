@@ -1,59 +1,49 @@
-Column_Name	DataType	MaxLength	Mapping Type	Mapped Value
-PartyId	VARCHAR	120	PASSTHRU	DEST_CUST_ID
-PartyType	VARCHAR		PASSTHRU	CONVERT_CODES('CUST_TYPE', 'IND')
-PartySubType	VARCHAR		PASSTHRU	CONVERT_CODES('CUST_SUB_TYPE', GFPF.GFCTP)
-PartyCategory	VARCHAR		CONSTANT	FULL
-PartyName	VARCHAR	255	PASSTHRU	GFPF.GFCUN
-PartyEquivalentName	VARCHAR	255		
-ShortName	VARCHAR	60	PASSTHRU	GFPF.GFDAS
-EquivalentShortName	VARCHAR	60		
-PartyAcquisitionDate	TIMESTAMP		PASSTHRU	NVL(EQ3_TO_ORACLE_DATE(GFPF.GFCOD),CONVERT_CODES('CONSTANT','BUSINESS_DATE'))
-RelationshipManagerID	VARCHAR	30	PASSTHRU	GFPF.GFACO
-IsMultiHost	VARCHAR	1	CONSTANT	N
-AlphaCode	VARCHAR		PASSTHRU	GFPF.GFCUS||GFPF.GFCLC
-BranchCode	VARCHAR	8	PASSTHRU	GFPF.GFBRNM
-CountryCode	VARCHAR	20	PASSTHRU	GFPF.GFCNAP
-RegionCode	VARCHAR	50	CONSTANT	
-AddressLine1	VARCHAR	256	PASSTHRU	SX20LF.SVNA1
-AddressLine2	VARCHAR	256	PASSTHRU	SX20LF.SVNA2
-AddressLine3	VARCHAR	256	PASSTHRU	SX20LF.SVNA3
-AddressLine4	VARCHAR	256	PASSTHRU	SX20LF.SVNA4
-AddressLine5	VARCHAR	256	PASSTHRU	SX20LF.SVNA5
-AddressLine6	VARCHAR	256		
-AddressLine7	VARCHAR	256		
-AddressLine8	VARCHAR	256		
-AddressLine9	VARCHAR	256		
-AddressLine10	VARCHAR	256		
-PostalCode	VARCHAR	20	PASSTHRU	SX20LF.SVPZIP
-City	VARCHAR	50		
-AddressFromDate	DATE		PASSTHRU	NVL(EQ3_TO_ORACLE_DATE(GFPF.GFCOD),CONVERT_CODES('CONSTANT','BUSINESS_DATE'))
-AddressToDate	DATE			
-PrincipalContact	VARCHAR	50		
-StatusAtTheAddress	VARCHAR	50		
-PreferredStatementChannel	VARCHAR	50		
-IsAgreetoContactForMarketing	VARCHAR		CONSTANT	N
-FeeWaiverIndicator	VARCHAR		CONSTANT	N
-IsBundlePricingEligibility	VARCHAR		CONSTANT	N
-IsWHTLiable	VARCHAR	1	CONSTANT	N
-TaxCountry	VARCHAR	20		
-TaxIdNumber	VARCHAR	50		
-IsRegistredForGST	VARCHAR	1	CONSTANT	N
-GSTRegistrationNumber	VARCHAR	50		
-TaxExcemptionId	VARCHAR	50		
-RelatedPartyID	VARCHAR	30	PASSTHRU	CASE WHEN RJRCUS IS NOT NULL THEN NVL(RJRCUS,TO_NCHAR('')) ELSE TO_NCHAR('') END
-RelationshipType	VARCHAR	50	PASSTHRU	CASE WHEN RJRCUS IS NOT NULL THEN CONVERT_CODES('CUST_REL_TYPE', TO_NCHAR(RJREL)) ELSE TO_NCHAR('') END
-StatementProfileId	VARCHAR	20		
-DelinquencyStatus	VARCHAR	20		
-DelinquencyLoanStatus	VARCHAR	50		
-ChargeFundingAccount	VARCHAR	20		
-SignatureStatus	VARCHAR	50		
-SignatureTransactionReference	VARCHAR	30		
-PriorKYCStatus	VARCHAR	50		
-IsMobileBanking	VARCHAR	1		
-IsInternetBanking	VARCHAR	1		
-IsConsolidateStatement	VARCHAR		CONSTANT	N
+Column_Name	DataType	MaxLength	Mapping Type	Mapping Value
+PartyId	VARCHAR	30	PASSTHRU	GFPF.GFCPNC
+PartyName	VARCHAR	300	PASSTHRU	GFPF.GFCUN
+FirstName	VARCHAR	60		
+MiddleName	VARCHAR	60		
+LastName	VARCHAR	60		
+Suffix	VARCHAR	50		
+Title	VARCHAR	50	PASSTHRU	SX20LF.SVCSA
+NationalIDType	VARCHAR	50	PASSTHRU	CONVERT_CODES('CUST_NATIONALIDTYPE', BGPF.BG0001)
+NationalID	VARCHAR	50	PASSTHRU	BGPF.BG0002
+DateOfBirth	DATE		PASSTHRU	NVL(EQ3_TO_ORACLE_DATE(BGPF.BG0007),CONVERT_CODES('CONSTANT','DEF_BIRTH_DATE'))
+IsPreviousIOrOtherName	VARCHAR	1	CONSTANT	N
+EmploymentStatus	VARCHAR	50	PASSTHRU	BGPF.BG0010
+CivilStatus	VARCHAR	50	PASSTHRU	CONVERT_CODES('CONSTANT', 'CIVIL_STATUS')
+Gender	VARCHAR	50	PASSTHRU	CONVERT_CODES('CUST_GENDER', BGPF.BG0008)
+CountryOfBirth	VARCHAR	20	PASSTHRU	CONVERT_CODES('COUNTRY', GFPF.GFCNAP)
+CountryOfResidence	VARCHAR	20	PASSTHRU	CONVERT_CODES('COUNTRY', GFPF.GFCNAL)
+CountryOfCitizenship	VARCHAR	20	PASSTHRU	CONVERT_CODES('COUNTRY', GFPF.GFCNAP)
+BirthTown	VARCHAR	100		
+ResidentStatus	VARCHAR	50	PASSTHRU	case when  GFPF.GFCNAP <> GFPF.GFCNAL THEN 'Non Resident' else 'Resident' end
+NumberOfDependents	SMALLINT			
+MotherMaidenName	VARCHAR	100	PASSTHRU	BGPF.BGC033
+FatherName	VARCHAR	100	PASSTHRU	BGPF.BGC034
+SpouseName	VARCHAR	100	PASSTHRU	BGPF.BGC035
+SurNameAtBirth	VARCHAR	25		
+EducationLevel	VARCHAR	50		
+JobTitle	VARCHAR	50		
+NameOfTheEmployer	VARCHAR	256		
+EmploymentStartDate 	DATE			
+EmploymentEndDate	DATE			
+PaymentMethod	VARCHAR	50		
+PaymentFrequency	VARCHAR	50		
+CurrencyCode	VARCHAR	3		
+GrossAnnualSalary	DECIMAL(24,6)			
+EmploymentType	VARCHAR	50		
+TypeOfBusiness	VARCHAR	50		
+EmployeeID	VARCHAR	50		
+ContarctEndDate	DATE			
+EmployersTelephone	VARCHAR	20		
+BuildingNameORNumber	VARCHAR	255		
+AddressId	VARCHAR	20		
+GrandfatherName	VARCHAR	25		
+LastApprovedBy	VARCHAR	30		
+LastModifiedBy	VARCHAR	30		
+LastUpdatedDateTime	TIMESTAMP			
 			__JOIN__	from map_cif map_cif
-			__JOIN__	inner join gfpf on leg_cust_id = gfpf.gfcus||gfpf.gfclc 
-			__JOIN__	left join bgpf on gfpf.gfcus = bgpf.bgcus and nvl(gfpf.gfclc,' ') = nvl(bgpf.bgclc, ' ') 
+			__JOIN__	inner join gfpf on leg_cust_id = gfpf.gfcus||gfpf.gfclc
+			__JOIN__	left join bgpf on gfpf.gfcus = bgpf.bgcus and nvl(gfpf.gfclc,' ') = nvl(bgpf.bgclc, ' ')
 			__JOIN__	left join VW_SXPRIM sx20lf on gfpf.gfcus = sx20lf.sxcus and nvl(gfpf.gfclc,' ') = nvl(sx20lf.sxclc, ' ')
-			__JOIN__	left join rjpf rjpf on rjpf.rjcus = gfpf.gfcus and nvl(gfpf.gfclc,' ') = nvl(rjpf.rjclc, ' ')
