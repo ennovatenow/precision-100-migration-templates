@@ -29,7 +29,7 @@ City	VARCHAR	50
 AddressFromDate	DATE		PASSTHRU	NVL(EQ3_TO_ORACLE_DATE(GFPF.GFCOD),CONVERT_CODES('CONSTANT','BUSINESS_DATE'))
 AddressToDate	DATE			
 PrincipalContact	VARCHAR	50		
-StatusAtTheAddress	VARCHAR	50	
+StatusAtTheAddress	VARCHAR	50		
 PreferredStatementChannel	VARCHAR	50		
 IsAgreetoContactForMarketing	VARCHAR		CONSTANT	N
 FeeWaiverIndicator	VARCHAR		CONSTANT	N
