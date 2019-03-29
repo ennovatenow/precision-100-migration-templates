@@ -45,7 +45,7 @@ SELECT
   -- LEG_ATTRIBUTE10,
   NULL,
   -- DEST_CUST_ID,
-  gfcus||gfclc,
+  gfcpnc,
   -- DEST_CUST_BRANCH,
   gfbrnm,
   -- DEST_CUST_NAME
