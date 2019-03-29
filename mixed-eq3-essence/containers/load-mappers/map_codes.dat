@@ -13,7 +13,7 @@ CUST_REL_TYPE,01,Husband,Husband,Husband,Y
 CUST_REL_TYPE,02,Wife,Wife,Wife,N
 CUST_REL_TYPE,03,Son,Son,Son,N
 CUST_REL_TYPE,04,Mother,Mother,Mother,N
-CONSTANT,BUSINESS_DATE,Business date of the Migration data,2019-03-21,Business Date of the Migration Data,N
+CONSTANT,BUSINESS_DATE,Business date of the Migration data,2019-03-21,Business Date of the Migration Data,Y
 CONSTANT,PREFERRED_CCY,Default currency code,INR,Default Currency Code,N
 CONSTANT,CIVIL_STATUS,Civil Status,Unknown,Unknown,N
 CONSTANT,DEF_BIRTH_DATE,Default  Birth Date,1960-02-29,Default  Birth Date,N
