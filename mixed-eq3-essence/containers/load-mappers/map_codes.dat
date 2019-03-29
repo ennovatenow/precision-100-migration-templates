@@ -9,5 +9,10 @@ CUST_NATIONALIDTYPE,PA,Passport,A Current Passport,Passport,N
 CUST_GENDER,MA,Male,Male,Male,N
 CUST_GENDER,FE,FeMale,Female,Female,N
 CUST_GENDER,TR,Not available,Unknown,Unknown,Y
+CUST_REL_TYPE,
+CUST_REL_TYPE,01,Husband,Husband,Husband,Y
+CUST_REL_TYPE,02,Wife,Wife,Wife,N
+CUST_REL_TYPE,03,Son,Son,Son,N
+CUST_REL_TYPE,04,Mother,Mother,Mother,N
 CONSTANT,BUSINESS_DATE,Business date of the Migration data,2019-03-21,Business Date of the Migration Data,N
 CONSTANT,PREFERRED_CCY,Default currency code,INR,Default Currency Code,N
