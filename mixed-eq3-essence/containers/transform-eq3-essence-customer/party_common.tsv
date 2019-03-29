@@ -55,5 +55,5 @@ IsConsolidateStatement	VARCHAR		CONSTANT	N
 			__JOIN__	from map_cif map_cif
 			__JOIN__	inner join gfpf on leg_cust_id = gfpf.gfcus||gfpf.gfclc 
 			__JOIN__	left join bgpf on gfpf.gfcus = bgpf.bgcus and nvl(gfpf.gfclc,' ') = nvl(bgpf.bgclc, ' ') 
-			__JOIN__	left join (SELECT * FROM sx20lf WHERE SXPRIM = 'P') sx20lf on gfpf.gfcus = sx20lf.sxcus and nvl(gfpf.gfclc,' ') = nvl(sx20lf.sxclc, ' ')
+			__JOIN__	left join VW_SXPRIM sx20lf on gfpf.gfcus = sx20lf.sxcus and nvl(gfpf.gfclc,' ') = nvl(sx20lf.sxclc, ' ')
 			__JOIN__	left join rjpf rjpf on rjpf.rjcus = gfpf.gfcus and nvl(gfpf.gfclc,' ') = nvl(rjpf.rjclc, ' ')
