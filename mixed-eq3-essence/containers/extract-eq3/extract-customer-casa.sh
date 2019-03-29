@@ -26,3 +26,9 @@ sleep $SIMULATION_SLEEP;
 echo "          Extracting table BGPF"
 cp $CONTAINER_FOLDER/$CONTAINER/BGPF.dat $SQLLDR_INPUT
 sleep $SIMULATION_SLEEP;
+echo "          Extracting table RIPF"
+cp $CONTAINER_FOLDER/$CONTAINER/RIPF.dat $SQLLDR_INPUT
+sleep $SIMULATION_SLEEP;
+echo "          Extracting table RJPF"
+cp $CONTAINER_FOLDER/$CONTAINER/RJPF.dat $SQLLDR_INPUT
+sleep $SIMULATION_SLEEP;
