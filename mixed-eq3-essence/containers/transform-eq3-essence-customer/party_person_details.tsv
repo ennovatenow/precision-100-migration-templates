@@ -43,6 +43,7 @@ GrandfatherName	VARCHAR	25
 LastApprovedBy	VARCHAR	30		
 LastModifiedBy	VARCHAR	30		
 LastUpdatedDateTime	TIMESTAMP			
+EmployerPartyId		VARCHAR	30		
 			__JOIN__	from map_cif map_cif
 			__JOIN__	inner join gfpf on leg_cust_id = gfpf.gfcus||gfpf.gfclc
 			__JOIN__	left join bgpf on gfpf.gfcus = bgpf.bgcus and nvl(gfpf.gfclc,' ') = nvl(bgpf.bgclc, ' ')
