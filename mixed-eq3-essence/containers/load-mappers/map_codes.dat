@@ -6,8 +6,8 @@ CUST_SUB_TYPE,EY,Signatory,Individual,Individual,Y
 CUST_NATIONALIDTYPE,PS,NationalID,A National Identity Card, National ID,Y
 CUST_NATIONALIDTYPE,DL,Driving License,Driver's Licence,Driving License,N
 CUST_NATIONALIDTYPE,PA,Passport,A Current Passport,Passport,N
-CUST_GENDER,MA,Male,Male,Male,N
-CUST_GENDER,FE,FeMale,Female,Female,N
+CUST_GENDER,M,Male,Male,Male,N
+CUST_GENDER,F,FeMale,Female,Female,N
 CUST_GENDER,TR,Not available,Unknown,Unknown,Y
 CUST_REL_TYPE,01,Husband,Husband,Husband,Y
 CUST_REL_TYPE,02,Wife,Wife,Wife,N
