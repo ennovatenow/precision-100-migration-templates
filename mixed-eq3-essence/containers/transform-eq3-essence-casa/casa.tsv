@@ -31,8 +31,8 @@ AccountStopCode	VARCHAR	10
 AccountClosureDate	DATE			
 DormancyStatus	VARCHAR	1		
 DateOfDormancy	DATE			
-DormantReactivationDate	DATE		
-LastActiveTransactionDate	DATE
+DormantReactivationDate	DATE			
+LastActiveTransactionDate	DATE			
 FeeWaveIndicator	VARCHAR	1		
 TaxIndicatorCredit	VARCHAR	5		
 ChargeFundingAccountId	VARCHAR	20		
