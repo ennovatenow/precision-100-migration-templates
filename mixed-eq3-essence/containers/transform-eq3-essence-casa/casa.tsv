@@ -1,120 +1,120 @@
-Column_Name		DataType	MaxLength	Mapping Type	Mapping Value
-CustomerNumber		VARCHAR		PASSTHRU	DEST_CUST_ID
-AccountNumber		VARCHAR		PASSTHRU	SCPF.SCAB||SCPF.SCAN||SCPF.SCAS
-SubProductId		VARCHAR	60		
-Productid		VARCHAR	16	PASSTHRU	CONVERT_CODES('BRANCH', SCPF.SCAB)
-Branch		VARCHAR		PASSTHRU	CONVERT_CODES('BRANCH', SCPF.SCAB)
-ISOCurrencyCode		VARCHAR		PASSTHRU	CONVERT_CODES('BRANCH', SCPF.SCSCCY)
-AccountName		VARCHAR	100	PASSTHRU	SCPF.SCSHN
-AccountStatus		VARCHAR	20		
-AccRightsIndicator		DECIMAL		CONSTANT	0
-ClearedBalance		DECIMAL		PASSTHRU	(SCPF.SCBAL-(SCPF.SCSUM1+SCPF.SCSUM2))/POWER(10,C8PF.C8CED)
-BookedBalance		DECIMAL		CONSTANT	SCPF.SCBAL/POWER(10,C8PF.C8CED)
-BlockedBalance		DECIMAL		PASSTHRU	SCPF.SCRBA/POWER(10,C8PF.C8CED)
-ChequeDepositBalance		DECIMAL		PASSTHRU	(SCPF.SCSUM1+SCPF.SCSUM2)/POWER(10,C8PF.C8CED)
-LastInterestAccuralDate		DATE		PASSTHRU	NVL(EQ3_TO_ORACLE_DATE( S5PF.S5LCDC),CONVERT_CODES('CONSTANT','LAST_INT_ACCR_DATE'))
-AccruedCreditInterest		DECIMAL		PASSTHRU	CASE   WHEN S5AM1C >= 0 THEN ABS(TO_NUMBER(((S5PF.S5AM4C)/POWER(10,C8PF.C8CED)) + ((S5PF.S5AM1C)/POWER(10,C8PF.C8CED)))) ELSE ABS(TO_NUMBER((S5PF.S5AM4C)/POWER(10,C8PF.C8CED))) END
-DebitAccruedInterest		DECIMAL		PASSTHRU	CASE WHEN S5AM1D <= 0 THEN ABS(TO_NUMBER(((S5AM4D)/POWER(10,C8PF.C8CED)) + ((S5PF.S5AM1D)/POWER(10,C8PF.C8CED)))) ELSE ABS(TO_NUMBER((S5AM4D)/POWER(10,C8PF.C8CED))) END
-CreditLimit		DECIMAL		CONSTANT	0
-DebitLimit		DECIMAL		PASSTHRU	SCPF.SCODL
-LimitExcessaction		INTEGER		CONSTANT	0
-LimitIndicator		INTEGER		CONSTANT	0
-LimitReviewDate		DATE		PASSTHRU	SCPF.SCLED
-LimitExpiryDate		DATE		PASSTHRU	SCPF.SCLED
-IsJointAccount		VARCHAR	1	CONSTANT	N
-AccountOpenDate		DATE		PASSTHRU	NVL(EQ3_TO_ORACLE_DATE(SCPF.SCOAD),CONVERT_CODES('CONSTANT','BUSINESS_DATE'))
-LastStaticAmendementDate		TIMESTAMP			SCPF.SCDLM
-LastTransactionDate		DATE		PASSTHRU	NVL(EQ3_TO_ORACLE_DATE(SCPF.SCDLE),CONVERT_CODES('CONSTANT','BUSINESS_DATE'))
-AccountStopDate		DATE			
-AccountStopReason		VARCHAR	30		
-AccountStopCode		VARCHAR	10		
-AccountClosureDate		DATE			
-DormancyStatus		VARCHAR	1		
-DateOfDormancy		DATE			
-DormantReactivationDate		DATE		PASSTHRU	NVL(EQ3_TO_ORACLE_DATE(SCPF.SCDLE),CONVERT_CODES('CONSTANT','BUSINESS_DATE'))
-LastActiveTransactionDate		DATE			
-FeeWaveIndicator		VARCHAR	1		
-TaxIndicatorCredit		VARCHAR	5		
-ChargeFundingAccountId		VARCHAR	20		
-Frequencyperiodcode		VARCHAR			
-Frequencyperiodunit		INTEGER			
-StatementDay		INTEGER			
-StatementMonth		INTEGER			
-AccountStatementConfigId		VARCHAR	20		
-BalSheetDebitNominalCode		VARCHAR	15		
-BalSheetDebitCostCenterCode		VARCHAR	15		
-BalSheetCreditNominalCode		VARCHAR	15		
-BalSheetCreditCostCenterCode		VARCHAR	15		
-ProfitLossNominalCode		VARCHAR	15		
-ProfitLossCostCentreCode		VARCHAR	15		
-CreditBaseCode		VARCHAR	8		
-CreditInterestRate		DECIMAL	14		
-CreditInterestMargin		DECIMAL	14		
-LastInterestAppliedCR		DECIMAL			
-InterestBaseDaysCR		INTEGER			
-InterestRateBasisCR		INTEGER			
-InterestMethodCR		INTEGER			
-InterestAccrualMethodCR		INTEGER			
-NominalDiscountedPrincipalCR		DECIMAL			
-FrequencyPeriodCodeCR		VARCHAR			
-FrequencyPeriodUnitCR		INTEGER			
-ApplicationDayCR		INTEGER			
-ApplicationMonthCR		INTEGER			
-CRIntNominalCode		VARCHAR	15		
-CRIntCostCentre		VARCHAR	15		
-CRIntPayawayAccount		VARCHAR	60		
-WHTApplicable		VARCHAR	1		
-WHTCalcMethod		VARCHAR	1		
-YTDInterest		DECIMAL			
-DebitBaseCode		VARCHAR	8		
-DebitInterestMargin		DECIMAL			
-DebitInterestRate		DECIMAL			
-InterestBaseDaysDR		INTEGER		PASSTHRU	C5PF.C5IDBD
-InterestRateBasisDR		INTEGER			
-InterestMethodDR		INTEGER			
-InterestAccrualMethodDR		INTEGER			
-DRIntNominalCode		VARCHAR	15		
-DRIntCostCentre		VARCHAR	15		
-PayawayDRAccount		VARCHAR	20		
-FrequencyPeriodCodeDR		VARCHAR			
-FrequencyPeriodUnitDR		INTEGER			
-ApplicationDayDR		INTEGER			
-ApplicationMonthDR		INTEGER			
-NominalDiscountedPrincipalDR		DECIMAL			
-LastInterestAppliedDR		DECIMAL			
-LastDRIntApplicationDate		DATE			
-PenaltyInterestCostCentreCode		VARCHAR	15		
-PI_LastApplicationDate		TIMESTAMP			
-PI_NextApplicationDate		TIMESTAMP			
-LowestMonthlyBal		DECIMAL			
-LastSavMinBal_IntAccrualDate		DATE			
-JointCustomerNumber		VARCHAR			
-AmountTenorRateID		VARCHAR			
-IndustryCode		VARCHAR			
-NextIntApplicationDateCR		DATE		PASSTHRU	NVL(EQ3_TO_ORACLE_DATE(S5PF.S5NCDC),CONVERT_CODES('CONSTANT','BUSINESS_DATE'))
-NextIntApplicationDateDR		DATE		PASSTHRU	NVL(EQ3_TO_ORACLE_DATE(S5PF.S5NCDD),CONVERT_CODES('CONSTANT','BUSINESS_DATE'))
-ExchangeRateMode		VARCHAR	50		
-CheckMinimumBalanceRequired		VARCHAR	1		
-IsBookedinFusionRisk		VARCHAR	1		
-CreditInterestMarginType		VARCHAR	30		
-CreditInterestMarginEnabled		VARCHAR	1		
-CreditratechangeApplicationdateoption		VARCHAR	50		
-IsCreditVariationRateApplicable		VARCHAR	1		
-DebitInterestMarginType		VARCHAR	30		
-DebitInterestMarginEnabled		VARCHAR	1		
-DebitratechangeApplicationdateoption		VARCHAR	50		
-IsDebitVariationRateApplicable		VARCHAR	1		
-Isexcludedfromdormancymarking		VARCHAR	1		
-JointAccountOwnershipPercentage		DECIMAL	24		
-ConsolidatedBulkPayment		VARCHAR	50		
-SignificantExcessAmount		DECIMAL			
-NoticeFreeWithdrawlAmount		DECIMAL			
-FABApplicable		VARCHAR	1		
-CoolingOFFEndDate		DATE			
-IsOtherBankFundingAccountforDebit		VARCHAR	1		
-CustomerBaseMargin		DECIMAL			
-IsOtherBankFundingAccountforCredit		VARCHAR	1		
-				__JOIN__	INNER JOIN gfpf ON gfpf.gfcpnc = scpf.scan  
-				__JOIN__	INNER JOIN c8pf ON c8pf.c8ccy = scpf.scccy  
-				__JOIN__	LEFT JOIN s5pf ON s5pf.s5ab = scpf.scab AND s5pf.s5an = scpf.scan AND s5pf.s5as = scpf.scas 
-				__JOIN__	INNER JOIN c5pf ON c5pf.c5atp = scpf.scact
+Column_Name	DataType	MaxLength	Mapping Type	Mapping Value
+CustomerNumber	VARCHAR		PASSTHRU	DEST_CUST_ID
+AccountNumber	VARCHAR		PASSTHRU	SCPF.SCAB||SCPF.SCAN||SCPF.SCAS
+SubProductId	VARCHAR	60		
+Productid	VARCHAR	16	PASSTHRU	CONVERT_CODES('BRANCH', SCPF.SCAB)
+Branch	VARCHAR		PASSTHRU	CONVERT_CODES('BRANCH', SCPF.SCAB)
+ISOCurrencyCode	VARCHAR		PASSTHRU	CONVERT_CODES('BRANCH', SCPF.SCSCCY)
+AccountName	VARCHAR	100	PASSTHRU	SCPF.SCSHN
+AccountStatus	VARCHAR	20		
+AccRightsIndicator	DECIMAL		CONSTANT	0
+ClearedBalance	DECIMAL		PASSTHRU	(SCPF.SCBAL-(SCPF.SCSUM1+SCPF.SCSUM2))/POWER(10,C8PF.C8CED)
+BookedBalance	DECIMAL		CONSTANT	SCPF.SCBAL/POWER(10,C8PF.C8CED)
+BlockedBalance	DECIMAL		PASSTHRU	SCPF.SCRBA/POWER(10,C8PF.C8CED)
+ChequeDepositBalance	DECIMAL		PASSTHRU	(SCPF.SCSUM1+SCPF.SCSUM2)/POWER(10,C8PF.C8CED)
+LastInterestAccuralDate	DATE		PASSTHRU	NVL(EQ3_TO_ORACLE_DATE( S5PF.S5LCDC),CONVERT_CODES('CONSTANT','LAST_INT_ACCR_DATE'))
+AccruedCreditInterest	DECIMAL		PASSTHRU	CASE   WHEN S5AM1C >= 0 THEN ABS(TO_NUMBER(((S5PF.S5AM4C)/POWER(10,C8PF.C8CED)) + ((S5PF.S5AM1C)/POWER(10,C8PF.C8CED)))) ELSE ABS(TO_NUMBER((S5PF.S5AM4C)/POWER(10,C8PF.C8CED))) END
+DebitAccruedInterest	DECIMAL		PASSTHRU	CASE WHEN S5AM1D <= 0 THEN ABS(TO_NUMBER(((S5AM4D)/POWER(10,C8PF.C8CED)) + ((S5PF.S5AM1D)/POWER(10,C8PF.C8CED)))) ELSE ABS(TO_NUMBER((S5AM4D)/POWER(10,C8PF.C8CED))) END
+CreditLimit	DECIMAL		CONSTANT	0
+DebitLimit	DECIMAL		PASSTHRU	SCPF.SCODL
+LimitExcessaction	INTEGER		CONSTANT	0
+LimitIndicator	INTEGER		CONSTANT	0
+LimitReviewDate	DATE		PASSTHRU	SCPF.SCLED
+LimitExpiryDate	DATE		PASSTHRU	SCPF.SCLED
+IsJointAccount	VARCHAR	1	CONSTANT	N
+AccountOpenDate	DATE		PASSTHRU	NVL(EQ3_TO_ORACLE_DATE(SCPF.SCOAD),CONVERT_CODES('CONSTANT','BUSINESS_DATE'))
+LastStaticAmendementDate	TIMESTAMP			SCPF.SCDLM
+LastTransactionDate	DATE		PASSTHRU	NVL(EQ3_TO_ORACLE_DATE(SCPF.SCDLE),CONVERT_CODES('CONSTANT','BUSINESS_DATE'))
+AccountStopDate	DATE			
+AccountStopReason	VARCHAR	30		
+AccountStopCode	VARCHAR	10		
+AccountClosureDate	DATE			
+DormancyStatus	VARCHAR	1		
+DateOfDormancy	DATE			
+DormantReactivationDate	DATE		PASSTHRU	NVL(EQ3_TO_ORACLE_DATE(SCPF.SCDLE),CONVERT_CODES('CONSTANT','BUSINESS_DATE'))
+LastActiveTransactionDate	DATE			
+FeeWaveIndicator	VARCHAR	1		
+TaxIndicatorCredit	VARCHAR	5		
+ChargeFundingAccountId	VARCHAR	20		
+Frequencyperiodcode	VARCHAR			
+Frequencyperiodunit	INTEGER			
+StatementDay	INTEGER			
+StatementMonth	INTEGER			
+AccountStatementConfigId	VARCHAR	20		
+BalSheetDebitNominalCode	VARCHAR	15		
+BalSheetDebitCostCenterCode	VARCHAR	15		
+BalSheetCreditNominalCode	VARCHAR	15		
+BalSheetCreditCostCenterCode	VARCHAR	15		
+ProfitLossNominalCode	VARCHAR	15		
+ProfitLossCostCentreCode	VARCHAR	15		
+CreditBaseCode	VARCHAR	8		
+CreditInterestRate	DECIMAL	14		
+CreditInterestMargin	DECIMAL	14		
+LastInterestAppliedCR	DECIMAL			
+InterestBaseDaysCR	INTEGER			
+InterestRateBasisCR	INTEGER			
+InterestMethodCR	INTEGER			
+InterestAccrualMethodCR	INTEGER			
+NominalDiscountedPrincipalCR	DECIMAL			
+FrequencyPeriodCodeCR	VARCHAR			
+FrequencyPeriodUnitCR	INTEGER			
+ApplicationDayCR	INTEGER			
+ApplicationMonthCR	INTEGER			
+CRIntNominalCode	VARCHAR	15		
+CRIntCostCentre	VARCHAR	15		
+CRIntPayawayAccount	VARCHAR	60		
+WHTApplicable	VARCHAR	1		
+WHTCalcMethod	VARCHAR	1		
+YTDInterest	DECIMAL			
+DebitBaseCode	VARCHAR	8		
+DebitInterestMargin	DECIMAL			
+DebitInterestRate	DECIMAL			
+InterestBaseDaysDR	INTEGER		PASSTHRU	C5PF.C5IDBD
+InterestRateBasisDR	INTEGER			
+InterestMethodDR	INTEGER			
+InterestAccrualMethodDR	INTEGER			
+DRIntNominalCode	VARCHAR	15		
+DRIntCostCentre	VARCHAR	15		
+PayawayDRAccount	VARCHAR	20		
+FrequencyPeriodCodeDR	VARCHAR			
+FrequencyPeriodUnitDR	INTEGER			
+ApplicationDayDR	INTEGER			
+ApplicationMonthDR	INTEGER			
+NominalDiscountedPrincipalDR	DECIMAL			
+LastInterestAppliedDR	DECIMAL			
+LastDRIntApplicationDate	DATE			
+PenaltyInterestCostCentreCode	VARCHAR	15		
+PI_LastApplicationDate	TIMESTAMP			
+PI_NextApplicationDate	TIMESTAMP			
+LowestMonthlyBal	DECIMAL			
+LastSavMinBal_IntAccrualDate	DATE			
+JointCustomerNumber	VARCHAR			
+AmountTenorRateID	VARCHAR			
+IndustryCode	VARCHAR			
+NextIntApplicationDateCR	DATE		PASSTHRU	NVL(EQ3_TO_ORACLE_DATE(S5PF.S5NCDC),CONVERT_CODES('CONSTANT','BUSINESS_DATE'))
+NextIntApplicationDateDR	DATE		PASSTHRU	NVL(EQ3_TO_ORACLE_DATE(S5PF.S5NCDD),CONVERT_CODES('CONSTANT','BUSINESS_DATE'))
+ExchangeRateMode	VARCHAR	50		
+CheckMinimumBalanceRequired	VARCHAR	1		
+IsBookedinFusionRisk	VARCHAR	1		
+CreditInterestMarginType	VARCHAR	30		
+CreditInterestMarginEnabled	VARCHAR	1		
+CreditratechangeApplicationdat	VARCHAR	50		
+IsCreditVariationRateApplicabl	VARCHAR	1		
+DebitInterestMarginType	VARCHAR	30		
+DebitInterestMarginEnabled	VARCHAR	1		
+DebitratechangeApplicationdate	VARCHAR	50		
+IsDebitVariationRateApplicable	VARCHAR	1		
+Isexcludedfromdormancymarking	VARCHAR	1		
+JointAccountOwnershipPercentag	DECIMAL	24		
+ConsolidatedBulkPayment	VARCHAR	50		
+SignificantExcessAmount	DECIMAL			
+NoticeFreeWithdrawlAmount	DECIMAL			
+FABApplicable	VARCHAR	1		
+CoolingOFFEndDate	DATE			
+IsOtherBankFundingAccountforDe	VARCHAR	1		
+CustomerBaseMargin	DECIMAL			
+IsOtherBankFundingAccountforCr	VARCHAR	1		
+			__JOIN__	INNER JOIN gfpf ON gfpf.gfcpnc = scpf.scan  
+			__JOIN__	INNER JOIN c8pf ON c8pf.c8ccy = scpf.scccy  
+			__JOIN__	LEFT JOIN s5pf ON s5pf.s5ab = scpf.scab AND s5pf.s5an = scpf.scan AND s5pf.s5as = scpf.scas 
+			__JOIN__	INNER JOIN c5pf ON c5pf.c5atp = scpf.scact
