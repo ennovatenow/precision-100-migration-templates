@@ -3,3 +3,5 @@
 30,map-cif.sql,sql
 40,map-acc.sql,sql
 50,map-off-acc.sql,sql
+60,map_product,smartloader
+70,prod_subprod_param,smartloader
