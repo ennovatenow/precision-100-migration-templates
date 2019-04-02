@@ -114,6 +114,7 @@ CoolingOFFEndDate	DATE
 IsOtherBankFundingAccountforDe	VARCHAR	1		
 CustomerBaseMargin	DECIMAL			
 IsOtherBankFundingAccountforCr	VARCHAR	1		
+			__JOIN__	FROM scpf scpf
 			__JOIN__	INNER JOIN gfpf ON gfpf.gfcpnc = scpf.scan  
 			__JOIN__	INNER JOIN c8pf ON c8pf.c8ccy = scpf.scccy  
 			__JOIN__	LEFT JOIN s5pf ON s5pf.s5ab = scpf.scab AND s5pf.s5an = scpf.scan AND s5pf.s5as = scpf.scas 
