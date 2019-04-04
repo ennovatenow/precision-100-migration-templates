@@ -1,4 +1,24 @@
 CREATE OR REPLACE VIEW PR_EQ3_VOLUME ("TABLE_NAME", "RECORD_COUNT") AS
+select 'GFPF', count(*) from gfpf
+union
+select 'SCPF', count(*) from scpf
+union
+select 'C8PF', count(*) from c8pf
+union
+select 'S5PF', count(*) from s5pf
+union
+select 'C5PF', count(*) from c5pf
+union
+select 'SX20LF', count(*) from SX20LF
+union
+select 'SVPF', count(*) from SVPF
+union
+select 'BGPF', count(*) from BGPF
+union
+select 'RIPF', count(*) from RIPF
+union
+select 'RJPF', count(*) from RJPF
+union
 select 'Number of Customers in Legacy', count(*) from gfpf
 union all
 select 'Number of Customers for migration', count(*) from map_cif
