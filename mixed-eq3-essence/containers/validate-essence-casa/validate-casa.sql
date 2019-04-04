@@ -8,7 +8,7 @@
 ** colum value <> list
 **
 */ 
-
+INSERT INTO V_CASA 
 select 'Number of CASA accounts in Legacy', count(*) from o_casa
 union all
 select 'Number of ZERO  Cleared balance accounts', count(*) from o_casa where ClearedBalance  = 0
