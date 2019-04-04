@@ -23,5 +23,5 @@ select 'Number of blocked accounts', count(*) from o_casa where AccountStatus ='
 union all
 select 'Number of Closed accounts', count(*) from o_casa where AccountStatus ='Closed'
 union all
-select 'Number of accounts with Blocked Balance', count(*) from o_casa where BlockedBalance <>0;
+select 'Number of accounts with Blocked Balance', count(*) from o_casa where BlockedBalance <>0
 ;
