@@ -27,8 +27,4 @@ select 'Mandatory value check(Empty)  - Branch Code', count(*) from o_party_comm
 union all
 select 'Mandatory value check(Empty)  - Postal Code', count(*) from o_party_common where PostalCode is null
 union all
-select 'Mandatory value check(Empty)  - Is Consolidate Statement', count(*) from o_party_common where IsConsolidateStatement is null
-
-;
-
-
+select 'Mandatory value check(Empty)  - Is Consolidate Statement', count(*) from o_party_common where IsConsolidateStatement is null;
