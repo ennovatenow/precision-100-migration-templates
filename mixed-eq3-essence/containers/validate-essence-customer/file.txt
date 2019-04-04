@@ -1,4 +1,3 @@
 10,create-validation-tables.sql,sql
 30,validate-party-common.sql,sql
 50,v_party_common,spool
-60,v_party_person_details,spool
