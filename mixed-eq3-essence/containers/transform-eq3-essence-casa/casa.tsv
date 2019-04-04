@@ -6,7 +6,7 @@ Productid	VARCHAR	16	PASSTHRU	DEST_PROD_CODE
 Branch	VARCHAR		PASSTHRU	CONVERT_CODES('BRANCH', SCPF.SCAB)
 ISOCurrencyCode	VARCHAR		PASSTHRU	CONVERT_CODES('CURRENCY', SCPF.SCCCY)
 AccountName	VARCHAR	100	PASSTHRU	SCPF.SCSHN
-AccountStatus	VARCHAR	20		CASE WHEN SCAI30 = 'Y' THEN 'Closed' when scai17 = 'Y' then 'Stopped' when scai20 = 'Y' then 'Dormant' else 'Activated' END
+AccountStatus	VARCHAR	20	PASSTHRU	CASE WHEN SCAI30 = 'Y' THEN 'Closed' when scai17 = 'Y' then 'Stopped' when scai20 = 'Y' then 'Dormant' else 'Activated' END
 AccRightsIndicator	DECIMAL		CONSTANT	0
 ClearedBalance	DECIMAL		PASSTHRU	(SCPF.SCBAL-(SCPF.SCSUM1+SCPF.SCSUM2))/POWER(10,C8PF.C8CED)
 BookedBalance	DECIMAL		PASSTHRU	SCPF.SCBAL/POWER(10,C8PF.C8CED)
