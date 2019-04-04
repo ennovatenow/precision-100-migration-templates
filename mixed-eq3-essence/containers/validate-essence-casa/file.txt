@@ -1,0 +1,4 @@
+10,o_casa,length-validator,v_pcasa
+20,validate-casa.sql,sql
+30,o_casa,length-validator,v_casa
+40,v_casa,spool
