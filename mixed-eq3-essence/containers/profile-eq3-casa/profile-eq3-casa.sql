@@ -1,4 +1,4 @@
-CREATE OR REPLACE VIEW PR_EQ3_VOLUME ("TABLE_NAME", "RECORD_COUNT") AS
+CREATE OR REPLACE VIEW PR_EQ3_CASA_VOLUME ("TABLE_NAME", "RECORD_COUNT") AS
 select 'Number of CASA accounts in Legacy', count(*) from scpf
 union all
 select 'Number of ZERO balance accounts', count(*) from scpf where scbal  = 0
