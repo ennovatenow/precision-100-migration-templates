@@ -84,8 +84,8 @@ NominalDiscountedPrincipalDR	DECIMAL
 LastInterestAppliedDR	DECIMAL			
 LastDRIntApplicationDate	DATE			
 PenaltyInterestCostCentreCode	VARCHAR	15	CONSTANT	00000001
-PI_LastApplicationDate	TIMESTAMP		PASSTHRU	EQ3_TO_ORACLE_DATE(S5PF.S5LCDD)
-PI_NextApplicationDate	TIMESTAMP		PASSTHRU	EQ3_TO_ORACLE_DATE(S5PF.S5NCDD)
+PI_LastApplicationDate	TIMESTAMP		PASSTHRU	EQ3_TO_ORACLE_DATE(S5PF.S5LCDD) || TO_NCHAR(' 00:00:00')
+PI_NextApplicationDate	TIMESTAMP		PASSTHRU	EQ3_TO_ORACLE_DATE(S5PF.S5NCDD) || TO_NCHAR(' 00:00:00')
 LowestMonthlyBal	DECIMAL			
 LastSavMinBal_IntAccrualDate	DATE			
 JointCustomerNumber	VARCHAR			
