@@ -13,4 +13,4 @@ select 'Number of blocked accounts', count(*) from scpf where scai17 ='Y'
 union all
 select 'Number of Closed accounts', count(*) from scpf where scai30 ='Y'
 union all
-select 'Number of accounts with Lien', count(*) from scpf where scrba <>0
+select 'Number of accounts with Lien', count(*) from scpf where scrba <>0;
