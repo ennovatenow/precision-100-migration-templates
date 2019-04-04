@@ -22,7 +22,7 @@ BEGIN
   END IF;
 
   IF ((v_temp_date = '000000') OR (v_temp_date = '0') OR (trim(v_temp_date) = '') OR v_temp_date is null) OR (v_temp_date = '9999999') OR (length(v_temp_date) <6 ) THEN
-    out_date := 'ERROR';
+    out_date := NULL;
   END IF;
 
   RETURN (out_date);
