@@ -41,5 +41,5 @@ SX20LF.SVPZIP is null and  SXPRIM = 'P'
 union all
 select 'Number of customers with Gender not mentioned', count(*) from bgpf where trim(BG0008) is null
 union all
-select 'Number of customers did not have any identification document', count(*) from bgpf where trim(BG0002) is null
+select 'Number of customers did not have any identification document', count(*) from bgpf where trim(BG0002) is null;
 
