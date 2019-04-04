@@ -1,1 +1,2 @@
 10,extract-customer-casa.sh,sh
+20,profile-customer-casa.sh,sh
