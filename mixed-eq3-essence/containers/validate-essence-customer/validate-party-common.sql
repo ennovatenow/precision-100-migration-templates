@@ -8,13 +8,27 @@
 ** colum value <> list
 **
 */ 
-INSERT INTO V_PARTY_COMMON 
--- PartyType has validation of type list
-SELECT 'Invalid Party Type', COUNT(1) FROM O_PARTY_COMMON WHERE (PARTYTYPE <> '1062' AND PARTYTYPE <> '1063')
-UNION
---SELECT 'Invalid Party Sub Type', COUNT(1) FROM O_PARTY_COMMON WHERE (PARTYSUBTYPE <> '1062' AND PARTYSUBTYPE <> '1063')
---UNION
-SELECT 'Invalid Party Category', COUNT(1) FROM O_PARTY_COMMON WHERE (PARTYCATEGORY <> 'Full')
+INSERT INTO V_PARTY_COMMON
+select 'Number of party migrated', count(*) from o_party_common
+union all
+select 'Mandatory value check(Empty)  - Party ID', count(*) from o_party_common where partyid is null
+union all
+select 'Mandatory value check(Empty)  - Party Type', count(*) from o_party_common where partytype is null
+union all
+select 'Mandatory value check(Empty)  - Party Sub Type', count(*) from o_party_common where PartySubType is null
+union all
+select 'Mandatory value check(Empty)  - Party Name', count(*) from o_party_common where PartyName is null
+union all
+select 'Mandatory value check(Empty)  - Short Name', count(*) from o_party_common where ShortName is null
+union all
+select 'Mandatory value check(Empty)  - Alpha Code', count(*) from o_party_common where AlphaCode is null
+union all
+select 'Mandatory value check(Empty)  - Branch Code', count(*) from o_party_common where BranchCode is null
+union all
+select 'Mandatory value check(Empty)  - Postal Code', count(*) from o_party_common where PostalCode is null
+union all
+select 'Mandatory value check(Empty)  - Is Consolidate Statement', count(*) from o_party_common where IsConsolidateStatement is null
+
 ;
 
 
