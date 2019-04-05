@@ -12,11 +12,11 @@ CUST_REL_TYPE,1,Daughter,Daughter,Daughter,Y
 CUST_REL_TYPE,2,Brother,Brother,Brother,N
 CUST_REL_TYPE,3,Husband,Husband,Husband,N
 CUST_REL_TYPE,4,Wife,Wife,Wife,N
-CONSTANT,BUSINESS_DATE,Business date of the Migration data,21-03-2019,Business Date of the Migration Data,Y
+CONSTANT,BUSINESS_DATE,Business date of the Migration data,2019-03-21,Business Date of the Migration Data,Y
 CONSTANT,PREFERRED_CCY,Default currency code,INR,Default Currency Code,N
 CONSTANT,CIVIL_STATUS,Civil Status,Married,Married,N
-CONSTANT,DEF_BIRTH_DATE,Default  Birth Date,29-02-1960,Default  Birth Date,N
-CONSTANT,DEF_ADDR_TO_DATE,Default Address To Date,31-12-2020,Default Address To Date,N
+CONSTANT,DEF_BIRTH_DATE,Default  Birth Date,1960-02-29,Default  Birth Date,N
+CONSTANT,DEF_ADDR_TO_DATE,Default Address To Date,2020-12-31,Default Address To Date,N
 CONSTANT,DEFAULT_POST_CODE,Default Postal Code,1,Default Postal Code,N
 COUNTRY,AF,Afghanistan,AF,Afghanistan,N
 COUNTRY,AX,Aland Islands,AX,Aland Islands,N
